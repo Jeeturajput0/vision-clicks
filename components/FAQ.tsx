@@ -91,7 +91,7 @@ export default function FAQ() {
         </div>
         <p className="mt-6 text-center text-sm text-slate-500">
           Still curious?{" "}
-          <Link href="/contact" className="inline-flex items-center gap-1 font-bold text-indigo-700 hover:text-indigo-900">
+          <Link href="/contact" className="inline-flex items-center gap-1 font-bold text-lime-800 hover:text-[#05070f]">
             <MessageCircle className="h-4 w-4" /> Ask us anything
           </Link>
         </p>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Phone, Mail, ArrowUpRight } from "lucide-react";
 
 // Inline brand icons (lucide-react no longer ships brand icons)
@@ -40,60 +41,64 @@ const companyLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
   { label: "Services", href: "/services" },
-  { label: "Contact Us", href: "/contact" },
   { label: "Solutions", href: "/solutions" },
-  { label: "Portfolio", href: "/services" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
-// Modern midnight footer
+// Ink footer with volt accents + giant wordmark
 export default function Footer() {
   return (
-    <footer id="contact" className="relative scroll-mt-28 overflow-hidden bg-[#04081a] text-slate-300">
+    <footer className="noise relative overflow-hidden bg-[#05070f] text-slate-300">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-32 left-1/2 h-64 w-[50rem] -translate-x-1/2 rounded-full bg-indigo-600/20 blur-[110px]" />
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-indigo-400/50 to-transparent" />
+        <div className="absolute -top-32 left-1/2 h-64 w-[50rem] -translate-x-1/2 rounded-full bg-volt-400/10 blur-[110px]" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-volt-400/60 to-transparent" />
       </div>
-      <div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-        {/* Top row */}
-        <div className="flex flex-col gap-6 rounded-3xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur sm:p-8 lg:flex-row lg:items-center lg:justify-between">
+      <div className="relative mx-auto max-w-7xl px-4 pt-14 sm:px-6 lg:px-8">
+        {/* Top CTA row */}
+        <div className="flex flex-col gap-6 rounded-[1.75rem] border border-white/10 bg-white/[0.04] p-6 backdrop-blur sm:p-8 lg:flex-row lg:items-center lg:justify-between">
           <div>
-            <p className="font-mono text-[11px] font-bold tracking-[0.2em] text-cyan-300 uppercase">
+            <p className="font-mono text-[11px] font-bold tracking-[0.22em] text-volt-300 uppercase">
               Let&apos;s work together
             </p>
-            <p className="font-display mt-2 text-2xl font-bold text-white sm:text-3xl">
-              Ready to build something great?
+            <p className="font-display mt-2 text-2xl font-bold tracking-tight text-white sm:text-3xl">
+              Have an idea? <span className="font-accent font-normal text-gradient-light">Let&apos;s talk.</span>
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <a
-              href="mailto:info@thevisionclicks.com"
-              className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-bold text-[#0a1330] transition hover:bg-cyan-200"
+            <Link
+              href="/contact"
+              className="group inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-bold text-[#05070f] transition hover:bg-volt-300"
             >
-              info@thevisionclicks.com
-              <ArrowUpRight className="h-4 w-4" />
-            </a>
+              Start a project
+              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </Link>
             <a
               href="tel:+91707946603"
               className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/[0.06] px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10"
             >
-              <Phone className="h-4 w-4 text-cyan-300" /> +91 707946603
+              <Phone className="h-4 w-4 text-volt-300" /> +91 707946603
             </a>
           </div>
         </div>
 
         <div className="mt-12 grid gap-10 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           <div>
-            <Link href="/" className="flex items-center gap-2.5" aria-label="Vision Clicks home">
-              <span className="relative grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-indigo-500 to-cyan-500 text-[15px] font-black text-white">
-                V
-              </span>
-              <span className="font-display text-lg font-bold text-white">
-                Vision<span className="text-gradient-light">Clicks</span>
-              </span>
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2.5 rounded-xl bg-white px-3 py-1.5"
+              aria-label="Vision Clicks home"
+            >
+              <Image
+                src="/vision-clicks-logo.png"
+                alt="Vision Clicks"
+                width={150}
+                height={45}
+                className="h-9 w-auto object-contain"
+              />
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/50">
-              A senior product & engineering team crafting software that
-              drives growth — from MVP to enterprise scale since 2014.
+              A senior product &amp; engineering studio crafting software that
+              drives growth — from MVP to enterprise scale, since 2014.
             </p>
             <div className="mt-5 flex gap-3">
               {[
@@ -105,7 +110,7 @@ export default function Footer() {
                   key={s.label}
                   href="/"
                   aria-label={`Vision Clicks on ${s.label}`}
-                  className="grid h-9 w-9 place-items-center rounded-full border border-white/10 bg-white/[0.06] text-white/70 transition hover:border-transparent hover:bg-gradient-to-br hover:from-indigo-500 hover:to-cyan-500 hover:text-white"
+                  className="grid h-9 w-9 place-items-center rounded-full border border-white/10 bg-white/[0.06] text-white/70 transition hover:border-transparent hover:bg-volt-400 hover:text-[#05070f]"
                 >
                   <s.icon className="h-4 w-4" />
                 </a>
@@ -118,7 +123,7 @@ export default function Footer() {
             <ul className="mt-4 space-y-2.5 text-sm">
               {serviceLinks.map((s) => (
                 <li key={s}>
-                  <Link href="/services" className="text-white/60 transition hover:text-cyan-300">
+                  <Link href="/services" className="text-white/60 transition hover:text-volt-300">
                     {s}
                   </Link>
                 </li>
@@ -131,7 +136,7 @@ export default function Footer() {
             <ul className="mt-4 space-y-2.5 text-sm">
               {companyLinks.map((c) => (
                 <li key={c.label}>
-                  <Link href={c.href} className="text-white/60 transition hover:text-cyan-300">
+                  <Link href={c.href} className="text-white/60 transition hover:text-volt-300">
                     {c.label}
                   </Link>
                 </li>
@@ -143,23 +148,23 @@ export default function Footer() {
             <h3 className="font-mono text-[11px] font-bold tracking-[0.2em] text-white/40 uppercase">Contact info</h3>
             <address className="mt-4 space-y-3 text-sm leading-relaxed text-white/60 not-italic">
               <p className="flex gap-2.5">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-cyan-300" />
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-volt-300" />
                 Shop No. 6, 2nd Floor, Sanjay Place, Agra, Uttar Pradesh, India-282002
               </p>
               <p className="flex items-center gap-2.5">
-                <Phone className="h-4 w-4 shrink-0 text-cyan-300" />
+                <Phone className="h-4 w-4 shrink-0 text-volt-300" />
                 <a href="tel:+91707946603" className="hover:text-white">
                   +91 707946603
                 </a>
               </p>
               <p className="flex items-center gap-2.5">
-                <Mail className="h-4 w-4 shrink-0 text-cyan-300" />
+                <Mail className="h-4 w-4 shrink-0 text-volt-300" />
                 <a href="mailto:info@thevisionclicks.com" className="hover:text-white">
                   info@thevisionclicks.com
                 </a>
               </p>
               <p className="flex items-center gap-2.5">
-                <Mail className="h-4 w-4 shrink-0 text-cyan-300" />
+                <Mail className="h-4 w-4 shrink-0 text-volt-300" />
                 <a href="mailto:thevisionclicks@gmail.com" className="hover:text-white">
                   thevisionclicks@gmail.com
                 </a>
@@ -168,9 +173,19 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-[13px] text-white/35 sm:flex-row">
-          <p>© 2014 The Vision Clicks. All rights reserved.</p>
-          <p className="font-mono tracking-wider uppercase">Designed & engineered in India</p>
+        {/* Giant wordmark */}
+        <div aria-hidden="true" className="mt-12 overflow-hidden">
+          <p className="wordmark-giant font-display text-center text-[13.5vw] font-bold tracking-tight whitespace-nowrap lg:text-[10rem]">
+            VISION CLICKS
+          </p>
+        </div>
+
+        <div className="flex flex-col items-center justify-between gap-3 border-t border-white/10 py-6 text-[13px] text-white/35 sm:flex-row">
+          <p>© 2014–2026 The Vision Clicks. All rights reserved.</p>
+          <p className="flex items-center gap-1.5 font-mono tracking-wider uppercase">
+            <span className="h-1.5 w-1.5 rounded-full bg-volt-400" />
+            Designed &amp; engineered in India
+          </p>
         </div>
       </div>
     </footer>

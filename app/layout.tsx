@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Inter, Space_Grotesk, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -13,6 +13,13 @@ const inter = Inter({
 const display = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-display",
+  display: "swap",
+});
+
+const accent = Instrument_Serif({
+  subsets: ["latin"],
+  variable: "--font-accent",
+  weight: "400",
   display: "swap",
 });
 
@@ -43,8 +50,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-      <html lang="en" className={`${inter.variable} ${display.variable} h-full scroll-smooth`}>
-      <body className="flex min-h-full flex-col bg-[#f7f8fc] font-sans text-slate-900 antialiased">
+      <html lang="en" className={`${inter.variable} ${display.variable} ${accent.variable} h-full scroll-smooth`}>
+      <body className="flex min-h-full flex-col bg-[#f4f5f0] font-sans text-slate-900 antialiased">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

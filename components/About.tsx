@@ -8,7 +8,7 @@ import SectionHeading from "./SectionHeading";
 // About Vision Clicks — modern split with experience badge
 export default function About() {
   return (
-    <section id="about" className="relative scroll-mt-28 py-16 sm:py-20 lg:py-24">
+    <section id="about" className="relative scroll-mt-28 py-16 sm:py-10 lg:py-8">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Who we are"
@@ -48,7 +48,7 @@ export default function About() {
                 { t: "Quality-first agile delivery", d: "QA, CI/CD, docs included" },
               ].map((item) => (
                 <li key={item.t} className="flex items-start gap-3 rounded-2xl border border-slate-200/70 bg-white p-4">
-                  <BadgeCheck className="mt-0.5 h-5 w-5 shrink-0 text-indigo-600" />
+                  <BadgeCheck className="mt-0.5 h-5 w-5 shrink-0 text-lime-700" />
                   <span>
                     <span className="block text-[15px] font-bold text-slate-800">{item.t}</span>
                     <span className="block text-[13px] text-slate-500">{item.d}</span>
@@ -58,7 +58,7 @@ export default function About() {
             </ul>
             <a
               href="/services"
-              className="group mt-7 inline-flex items-center gap-2 rounded-xl bg-[#0a1330] px-5 py-3 text-sm font-bold text-white transition hover:bg-indigo-700"
+              className="group mt-7 inline-flex items-center gap-2 rounded-xl bg-[#05070f] px-5 py-3 text-sm font-bold text-white transition hover:bg-lime-700"
             >
               Explore our capabilities
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -72,7 +72,7 @@ export default function About() {
             transition={{ duration: 0.65 }}
             className="relative"
           >
-            <div aria-hidden="true" className="absolute -inset-5 rounded-[2.5rem] bg-gradient-to-br from-indigo-200/60 via-cyan-100/50 to-transparent blur-2xl" />
+            <div aria-hidden="true" className="absolute -inset-5 rounded-[2.5rem] bg-gradient-to-br from-lime-200/70 via-volt-200/50 to-transparent blur-2xl" />
             <div className="group relative overflow-hidden rounded-[2rem] border border-white shadow-[0_28px_60px_-24px_rgb(4_8_26/0.4)]">
               <Image
                 src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"

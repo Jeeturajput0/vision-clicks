@@ -21,13 +21,13 @@ const values = [
     icon: BadgeCheck,
     title: "Quality",
     text: "Reviews, tests, CI/CD and docs by default. Highest bar from code to support.",
-    iconBg: "bg-gradient-to-br from-indigo-600 to-cyan-500",
+    iconBg: "bg-gradient-to-br from-lime-500 to-lime-700",
   },
   {
     icon: Users,
     title: "Collaboration",
     text: "Weekly demos and shared roadmaps — you always know what's next.",
-    iconBg: "bg-gradient-to-br from-violet-600 to-purple-500",
+    iconBg: "bg-gradient-to-br from-[#05070f] to-lime-800",
   },
 ];
 

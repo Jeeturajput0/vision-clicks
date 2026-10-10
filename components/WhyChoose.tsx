@@ -31,49 +31,39 @@ const items = [
   },
 ];
 
-// Why Choose — modern dark band
+// Why Choose — clean paper cards with ink icons
 export default function WhyChoose() {
   return (
-    <section aria-label="Why choose Vision Clicks" className="relative scroll-mt-28 py-16 sm:py-20">
+    <section aria-label="Why choose Vision Clicks" className="relative scroll-mt-28 py-16 sm:py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-[2.5rem] bg-[#04081a] px-6 py-14 sm:px-10 lg:px-14">
-          <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-            <div className="bg-grid-dark absolute inset-0 opacity-70" />
-            <div className="absolute -top-24 left-1/3 h-72 w-72 rounded-full bg-indigo-600/30 blur-[100px]" />
-            <div className="absolute -right-20 -bottom-24 h-72 w-72 rounded-full bg-cyan-500/20 blur-[100px]" />
-          </div>
-          <div className="relative">
-            <SectionHeading
-              dark
-              eyebrow="Why us"
-              title="Your technology partner,"
-              highlight="not just a vendor"
-              description="Transparent pricing, senior-only teams and code you own from day one."
-            />
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {items.map((c, i) => (
-                <motion.article
-                  key={c.title}
-                  initial={{ opacity: 0, y: 28 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-60px" }}
-                  transition={{ duration: 0.5, delay: i * 0.08 }}
-                  whileHover={{ y: -8 }}
-                  className="glass-dark ring-line group rounded-3xl p-6"
-                >
-                  <div className="flex items-center justify-between">
-                    <div className="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-indigo-500 to-cyan-500 text-white shadow-lg transition-transform duration-300 group-hover:scale-110">
-                      <c.icon className="h-5 w-5" aria-hidden="true" />
-                    </div>
-                    <ArrowUpRight className="h-4 w-4 text-white/30 transition group-hover:text-cyan-300" />
-                  </div>
-                  <p className="font-display mt-4 text-sm font-bold text-cyan-300">{c.stat}</p>
-                  <h3 className="font-display mt-1 text-[17px] font-bold text-white">{c.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-white/55">{c.text}</p>
-                </motion.article>
-              ))}
-            </div>
-          </div>
+        <SectionHeading
+          eyebrow="Why us"
+          title="Your technology partner,"
+          highlight="not just a vendor"
+          description="Transparent pricing, senior-only teams and code you own from day one."
+        />
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {items.map((c, i) => (
+            <motion.article
+              key={c.title}
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+              whileHover={{ y: -8 }}
+              className="group rounded-3xl border border-slate-900/10 bg-white p-6 shadow-[0_14px_36px_-24px_rgb(5_7_15/0.3)] transition-shadow hover:shadow-[0_26px_50px_-22px_rgb(5_7_15/0.35)]"
+            >
+              <div className="flex items-center justify-between">
+                <div className="grid h-11 w-11 place-items-center rounded-2xl bg-[#05070f] text-volt-300 shadow-lg transition-transform duration-300 group-hover:scale-110">
+                  <c.icon className="h-5 w-5" aria-hidden="true" />
+                </div>
+                <ArrowUpRight className="h-4 w-4 text-slate-300 transition group-hover:text-lime-700" />
+              </div>
+              <p className="font-display mt-4 font-mono text-[13px] font-bold tracking-wide text-lime-700 uppercase">{c.stat}</p>
+              <h3 className="font-display mt-1 text-[17px] font-bold text-[#05070f]">{c.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-600">{c.text}</p>
+            </motion.article>
+          ))}
         </div>
       </div>
     </section>

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
 import { technologies } from "@/data/technologies";
 
-// Modern technology marquee grid
+// Technology showcase — ink chips on paper
 export default function Technologies() {
   return (
     <section aria-label="Technologies we master" className="py-16 sm:py-20">
@@ -24,15 +24,13 @@ export default function Technologies() {
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
               whileHover={{ y: -6 }}
-              className="group flex items-center gap-4 rounded-2xl border border-slate-200/70 bg-white p-4 shadow-[0_10px_28px_-20px_rgb(4_8_26/0.3)] transition-shadow hover:border-indigo-200 hover:shadow-[0_20px_36px_-18px_rgb(79_70_229/0.4)]"
+              className="group flex items-center gap-4 rounded-2xl border border-slate-900/10 bg-white p-4 shadow-[0_10px_28px_-22px_rgb(5_7_15/0.3)] transition-all hover:border-lime-600/40 hover:shadow-[0_20px_36px_-20px_rgb(77_124_15/0.35)]"
             >
-              <span
-                className={`grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[#0a1330] font-mono text-sm font-black text-cyan-300`}
-              >
+              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[#05070f] font-mono text-sm font-black text-volt-300">
                 {t.symbol}
               </span>
               <span>
-                <span className="font-display block text-[15px] font-bold text-slate-900">{t.name}</span>
+                <span className="font-display block text-[15px] font-bold text-[#05070f]">{t.name}</span>
                 <span className="block font-mono text-[11px] tracking-wider text-slate-500 uppercase">Production ready</span>
               </span>
             </motion.div>

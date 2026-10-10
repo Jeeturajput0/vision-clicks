@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import PageHero from "@/components/PageHero";
 import WhatWeDo from "@/components/WhatWeDo";
 import WhyChoose from "@/components/WhyChoose";
 import CTA from "@/components/CTA";
@@ -12,7 +13,13 @@ export const metadata: Metadata = {
 export default function SolutionsPage() {
   return (
     <>
-      <div className="pt-28" />
+      <PageHero
+        eyebrow="Solutions"
+        title="Future-ready solutions"
+        highlight="that scale"
+        description="From MVP to enterprise platform — scalable builds for startups, SMEs and large organisations."
+        crumb="Solutions"
+      />
       <WhatWeDo />
       <WhyChoose />
       <CTA />

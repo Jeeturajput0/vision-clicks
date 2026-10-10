@@ -23,7 +23,7 @@ export default function ContactForm() {
   };
 
   const inputCls =
-    "w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-900 placeholder:font-normal placeholder:text-slate-400 transition outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200";
+    "w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-900 placeholder:font-normal placeholder:text-slate-400 transition outline-none focus:border-lime-600 focus:ring-2 focus:ring-lime-200";
 
   return (
     <div className="relative overflow-hidden rounded-[1.75rem] border border-slate-200/70 bg-white p-7 shadow-[0_24px_60px_-28px_rgb(5_7_15/0.35)] sm:p-9">
@@ -62,7 +62,7 @@ export default function ContactForm() {
             exit={{ opacity: 0, scale: 0.98 }}
             onSubmit={handleSubmit}
           >
-            <p className="font-mono text-[11px] font-bold tracking-[0.2em] text-indigo-600 uppercase">
+            <p className="font-mono text-[11px] font-bold tracking-[0.2em] text-lime-800 uppercase">
               Free quote in 24 hours
             </p>
             <h2 className="font-display mt-2 text-2xl font-bold text-slate-900 sm:text-3xl">
@@ -136,7 +136,7 @@ export default function ContactForm() {
 
             <button
               type="submit"
-              className="group mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#05070f] px-6 py-4 text-sm font-bold text-white transition hover:bg-indigo-700"
+              className="group mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#05070f] px-6 py-4 text-sm font-bold text-white transition hover:bg-lime-700"
             >
               <Send className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-0.5" />
               Send enquiry — get free quote

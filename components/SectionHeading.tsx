@@ -12,7 +12,7 @@ type Props = {
   dark?: boolean;
 };
 
-// Modern section heading — mono eyebrow + display font
+// Section heading — mono eyebrow with volt dot + serif italic highlight
 export default function SectionHeading({
   eyebrow,
   title,
@@ -37,22 +37,26 @@ export default function SectionHeading({
           className={cn(
             "inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 font-mono text-[11px] font-bold tracking-[0.18em] uppercase",
             dark
-              ? "border-white/15 bg-white/[0.07] text-cyan-200"
-              : "border-indigo-100 bg-indigo-50/80 text-indigo-700"
+              ? "border-white/15 bg-white/[0.07] text-white/80"
+              : "border-slate-900/10 bg-white text-slate-600 shadow-sm"
           )}
         >
-          <span className={cn("h-1.5 w-1.5 rounded-full", dark ? "bg-cyan-300" : "bg-indigo-500")} />
+          <span className="h-1.5 w-1.5 rounded-full bg-volt-500" />
           {eyebrow}
         </span>
       )}
       <h2
         className={cn(
           "font-display mt-4 text-3xl font-bold tracking-tight text-balance sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1]",
-          dark ? "text-white" : "text-slate-900"
+          dark ? "text-white" : "text-[#05070f]"
         )}
       >
         {title}{" "}
-        {highlight && <span className={dark ? "text-gradient-light" : "text-gradient"}>{highlight}</span>}
+        {highlight && (
+          <span className={dark ? "font-accent text-gradient-light" : "font-accent text-gradient"}>
+            {highlight}
+          </span>
+        )}
       </h2>
       {description && (
         <p

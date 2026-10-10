@@ -80,7 +80,7 @@ export default function WhatWeDo() {
                 <div className="absolute right-5 bottom-5 left-5 flex items-center justify-between rounded-2xl border border-white/20 bg-white/10 px-5 py-4 backdrop-blur-xl">
                   <div>
                     <p className="text-sm font-extrabold text-white">Web • Mobile • Enterprise • Cloud</p>
-                    <p className="font-mono text-[11px] tracking-wider text-cyan-200 uppercase">Sprint-based delivery</p>
+                    <p className="font-mono text-[11px] tracking-wider text-volt-300 uppercase">Sprint-based delivery</p>
                   </div>
                   <span className="rounded-full bg-white px-3 py-1.5 text-xs font-bold text-[#0a1330]">
                     Agile

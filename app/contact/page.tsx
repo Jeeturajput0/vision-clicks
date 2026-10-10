@@ -56,7 +56,7 @@ export default function ContactPage() {
               rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
               className="group rounded-3xl border border-slate-200/70 bg-white p-7 shadow-[0_14px_36px_-24px_rgb(5_7_15/0.3)] transition-all hover:-translate-y-2 hover:shadow-[0_28px_56px_-24px_rgb(79_70_229/0.45)]"
             >
-              <div className="grid h-12 w-12 place-items-center rounded-2xl bg-[#05070f] text-volt-300 transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-indigo-600 group-hover:to-cyan-500 group-hover:text-white">
+              <div className="grid h-12 w-12 place-items-center rounded-2xl bg-[#05070f] text-volt-300 transition-all duration-300 group-hover:bg-volt-400 group-hover:text-[#05070f]">
                 <c.icon className="h-6 w-6" aria-hidden="true" />
               </div>
               <h2 className="font-display mt-5 text-lg font-bold text-slate-900">{c.title}</h2>
@@ -65,7 +65,7 @@ export default function ContactPage() {
                   {l}
                 </p>
               ))}
-              <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-indigo-700">
+              <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-lime-800">
                 {c.action}
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </span>
@@ -78,8 +78,8 @@ export default function ContactPage() {
           <ContactForm />
           <aside className="noise relative overflow-hidden rounded-[1.75rem] bg-[#05070f] p-7 text-white sm:p-8">
             <div aria-hidden="true" className="absolute inset-0">
-              <div className="bg-dots absolute inset-0 opacity-30" />
-              <div className="absolute -top-16 -right-16 h-52 w-52 rounded-full bg-indigo-600/40 blur-[80px]" />
+              <div className="bg-dots-light absolute inset-0 opacity-30" />
+              <div className="absolute -top-16 -right-16 h-52 w-52 rounded-full bg-lime-500/25 blur-[80px]" />
               <div className="absolute -bottom-16 -left-16 h-52 w-52 rounded-full bg-volt-400/15 blur-[80px]" />
             </div>
             <div className="relative">

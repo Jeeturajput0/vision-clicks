@@ -39,7 +39,7 @@ const plans = [
 // Engagement models — pricing-style cards, the trust-building section
 export default function Engagement() {
   return (
-    <section aria-label="Engagement models" className="py-16 sm:py-24">
+    <section aria-label="Engagement models" className="py-16 sm:py-14">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Engagement"
@@ -65,8 +65,8 @@ export default function Engagement() {
             >
               {p.featured && (
                 <>
-                  <div aria-hidden="true" className="absolute -top-20 -right-20 h-56 w-56 rounded-full bg-indigo-600/40 blur-[80px]" />
-                  <div aria-hidden="true" className="absolute -bottom-20 -left-20 h-56 w-56 rounded-full bg-cyan-500/20 blur-[80px]" />
+                  <div aria-hidden="true" className="absolute -top-20 -right-20 h-56 w-56 rounded-full bg-lime-500/30 blur-[80px]" />
+                  <div aria-hidden="true" className="absolute -bottom-20 -left-20 h-56 w-56 rounded-full bg-volt-400/15 blur-[80px]" />
                   <span className="absolute top-5 right-5 inline-flex items-center gap-1 rounded-full bg-volt-400 px-3 py-1 text-[11px] font-black text-[#05070f]">
                     <Sparkles className="h-3 w-3" /> {p.tag}
                   </span>
@@ -89,7 +89,7 @@ export default function Engagement() {
               <ul className="mt-6 flex-1 space-y-3">
                 {p.features.map((f) => (
                   <li key={f} className={cn("flex items-center gap-2.5 text-sm font-medium", p.featured ? "text-white/80" : "text-slate-600")}>
-                    <span className={cn("grid h-5 w-5 shrink-0 place-items-center rounded-full", p.featured ? "bg-volt-400 text-[#05070f]" : "bg-indigo-50 text-indigo-700")}>
+                    <span className={cn("grid h-5 w-5 shrink-0 place-items-center rounded-full", p.featured ? "bg-volt-400 text-[#05070f]" : "bg-lime-100 text-lime-800")}>
                       <Check className="h-3 w-3" aria-hidden="true" />
                     </span>
                     {f}
@@ -102,7 +102,7 @@ export default function Engagement() {
                   "group mt-7 inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-sm font-bold transition",
                   p.featured
                     ? "bg-white text-[#05070f] hover:bg-volt-300"
-                    : "bg-[#05070f] text-white hover:bg-indigo-700"
+                    : "bg-[#05070f] text-white hover:bg-lime-700"
                 )}
               >
                 {p.cta}

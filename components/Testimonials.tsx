@@ -7,7 +7,7 @@ import SectionHeading from "./SectionHeading";
 import { testimonials } from "@/data/testimonials";
 import { cn } from "@/lib/utils";
 
-// Modern dark testimonial carousel
+// Paper testimonial carousel — big serif quotes
 export default function Testimonials() {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(1);
@@ -23,96 +23,88 @@ export default function Testimonials() {
   const current = testimonials[index];
 
   return (
-    <section aria-label="Client testimonials" className="relative overflow-hidden py-16 sm:py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-[#0a1330] via-[#141b5e] to-[#0a5a72] px-6 py-14 sm:px-10">
-          <div aria-hidden="true" className="absolute inset-0">
-            <div className="bg-dots absolute inset-0 opacity-30" />
-            <div className="absolute -top-24 left-1/4 h-72 w-72 rounded-full bg-white/15 blur-[100px]" />
-          </div>
+    <section aria-label="Client testimonials" className="relative overflow-hidden py-16 sm:py-10">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <SectionHeading
+          // eyebrow="Clients"
+          title="Loved by teams"
+          highlight="that ship"
+          description="Real feedback from businesses we've helped grow."
+        />
 
-          <div className="relative mx-auto max-w-4xl">
-            <SectionHeading
-              dark
-              eyebrow="Clients"
-              title="Loved by teams"
-              highlight="that ship"
-              description="Real feedback from businesses we've helped grow."
-            />
-
-            <div className="relative mt-10">
-              <div className="overflow-hidden">
-                <AnimatePresence mode="wait" custom={direction}>
-                  <motion.figure
-                    key={index}
-                    custom={direction}
-                    initial={{ opacity: 0, x: 60 * direction }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -60 * direction }}
-                    transition={{ duration: 0.4, ease: "easeOut" }}
-                    className="glass-dark ring-line mx-auto max-w-3xl rounded-[1.75rem] p-8 text-center sm:p-10"
-                  >
-                    <Quote className="mx-auto h-8 w-8 text-cyan-300/70" aria-hidden="true" />
-                    <div className="mt-3 flex justify-center gap-1" aria-label="5 star rating">
-                      {Array.from({ length: 5 }).map((_, i) => (
-                        <Star key={i} className="h-4 w-4 fill-amber-300 text-amber-300" aria-hidden="true" />
-                      ))}
-                    </div>
-                    <blockquote className="font-display mt-4 text-base leading-relaxed font-medium text-white sm:text-xl">
-                      “{current.quote}”
-                    </blockquote>
-                    <figcaption className="mt-6 flex items-center justify-center gap-3">
-                      <span className="grid h-11 w-11 place-items-center rounded-full bg-gradient-to-br from-indigo-500 to-cyan-500 text-sm font-black text-white ring-1 ring-white/40">
-                        {current.initials}
-                      </span>
-                      <span className="text-left">
-                        <span className="block text-[15px] font-extrabold text-white">{current.name}</span>
-                        <span className="block text-sm text-white/55">{current.role}</span>
-                      </span>
-                    </figcaption>
-                  </motion.figure>
-                </AnimatePresence>
-              </div>
-
-              {/* Controls */}
-              <div className="mt-7 flex items-center justify-center gap-4">
-                <button
-                  type="button"
-                  onClick={() => go(-1)}
-                  aria-label="Previous testimonial"
-                  className="grid h-10 w-10 place-items-center rounded-full border border-white/20 bg-white/10 text-white transition hover:bg-white/25"
-                >
-                  <ChevronLeft className="h-5 w-5" />
-                </button>
-                <div className="flex items-center gap-2" role="tablist" aria-label="Testimonial pages">
-                  {testimonials.map((t, i) => (
-                    <button
-                      key={t.name}
-                      type="button"
-                      role="tab"
-                      aria-selected={i === index}
-                      aria-label={`Go to testimonial ${i + 1}`}
-                      onClick={() => {
-                        setDirection(i > index ? 1 : -1);
-                        setIndex(i);
-                      }}
-                      className={cn(
-                        "h-2 rounded-full transition-all",
-                        i === index ? "w-8 bg-cyan-300" : "w-2 bg-white/30 hover:bg-white/60"
-                      )}
-                    />
+        <div className="relative mt-10">
+          <div className="overflow-hidden pt-2">
+            <AnimatePresence mode="wait" custom={direction}>
+              <motion.figure
+                key={index}
+                custom={direction}
+                initial={{ opacity: 0, x: 60 * direction }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -60 * direction }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                className="mx-auto max-w-3xl rounded-[1.75rem] border border-slate-900/10 bg-white p-8 text-center shadow-[0_24px_60px_-30px_rgb(5_7_15/0.35)] sm:p-10"
+              >
+                <span className="mx-auto grid h-12 w-12 place-items-center rounded-2xl bg-[#05070f]">
+                  <Quote className="h-5 w-5 text-volt-300" aria-hidden="true" />
+                </span>
+                <div className="mt-4 flex justify-center gap-1" aria-label="5 star rating">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" aria-hidden="true" />
                   ))}
                 </div>
+                <blockquote className="font-accent mt-4 text-xl leading-relaxed text-[#05070f] sm:text-2xl">
+                  “{current.quote}”
+                </blockquote>
+                <figcaption className="mt-6 flex items-center justify-center gap-3">
+                  <span className="grid h-11 w-11 place-items-center rounded-full bg-[#05070f] text-sm font-black text-volt-300">
+                    {current.initials}
+                  </span>
+                  <span className="text-left">
+                    <span className="block text-[15px] font-extrabold text-[#05070f]">{current.name}</span>
+                    <span className="block text-sm text-slate-500">{current.role}</span>
+                  </span>
+                </figcaption>
+              </motion.figure>
+            </AnimatePresence>
+          </div>
+
+          {/* Controls */}
+          <div className="mt-7 flex items-center justify-center gap-4">
+            <button
+              type="button"
+              onClick={() => go(-1)}
+              aria-label="Previous testimonial"
+              className="grid h-10 w-10 place-items-center rounded-full border border-slate-900/15 bg-white text-[#05070f] transition hover:bg-[#05070f] hover:text-white"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+            <div className="flex items-center gap-2" role="tablist" aria-label="Testimonial pages">
+              {testimonials.map((t, i) => (
                 <button
+                  key={t.name}
                   type="button"
-                  onClick={() => go(1)}
-                  aria-label="Next testimonial"
-                  className="grid h-10 w-10 place-items-center rounded-full border border-white/20 bg-white/10 text-white transition hover:bg-white/25"
-                >
-                  <ChevronRight className="h-5 w-5" />
-                </button>
-              </div>
+                  role="tab"
+                  aria-selected={i === index}
+                  aria-label={`Go to testimonial ${i + 1}`}
+                  onClick={() => {
+                    setDirection(i > index ? 1 : -1);
+                    setIndex(i);
+                  }}
+                  className={cn(
+                    "h-2 rounded-full transition-all",
+                    i === index ? "w-8 bg-[#05070f]" : "w-2 bg-slate-300 hover:bg-slate-400"
+                  )}
+                />
+              ))}
             </div>
+            <button
+              type="button"
+              onClick={() => go(1)}
+              aria-label="Next testimonial"
+              className="grid h-10 w-10 place-items-center rounded-full border border-slate-900/15 bg-white text-[#05070f] transition hover:bg-[#05070f] hover:text-white"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
           </div>
         </div>
       </div>

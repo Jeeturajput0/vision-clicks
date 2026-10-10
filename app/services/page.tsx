@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import PageHero from "@/components/PageHero";
 import Services from "@/components/Services";
 import Technologies from "@/components/Technologies";
 import CTA from "@/components/CTA";
@@ -6,13 +7,19 @@ import CTA from "@/components/CTA";
 export const metadata: Metadata = {
   title: "Services | Vision Clicks",
   description:
-    "Custom software development, mobile apps, web development, enterprise solutions and digital marketing services.",
+    "Web development, mobile app development, custom software, UI/UX design and digital solutions — five core services, one senior team.",
 };
 
 export default function ServicesPage() {
   return (
     <>
-      <div className="pt-28" />
+      <PageHero
+        eyebrow="Services"
+        title="Capabilities across"
+        highlight="the full journey"
+        description="Design, engineering, cloud and growth — one senior team covering your full product journey."
+        crumb="Services"
+      />
       <Services />
       <Technologies />
       <CTA />

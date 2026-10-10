@@ -4,36 +4,30 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
     Roboto, sans-serif;
   --font-display: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-accent: "Instrument Serif", ui-serif, Georgia, serif;
 
-  /* Modern midnight + electric indigo + cyan system */
-  --color-ink-950: #04081a;
-  --color-ink-900: #0a1330;
-  --color-ink-800: #131f49;
-  --color-ink-700: #1e2d5f;
+  /* Paper + ink + volt signature system — no blue */
+  --color-ink-950: #05070f;
+  --color-ink-900: #0a0f22;
+  --color-ink-800: #141b33;
+  --color-ink-700: #232c4e;
   --color-ink-600: #475569;
   --color-ink-500: #64748b;
 
-  --color-royal-50: #eef2ff;
-  --color-royal-100: #e0e7ff;
-  --color-royal-200: #c7d2fe;
-  --color-royal-400: #818cf8;
-  --color-royal-500: #6366f1;
-  --color-royal-600: #4f46e5;
-  --color-royal-700: #4338ca;
+  /* Signature volt — high-energy accents */
+  --color-volt-200: #eefbb0;
+  --color-volt-300: #e4ff6a;
+  --color-volt-400: #d4f542;
+  --color-volt-500: #b8dd1e;
 
-  --color-mint-300: #67e8f9;
-  --color-mint-400: #22d3ee;
-  --color-mint-500: #06b6d4;
+  --color-cream: #f4f5f0;
 
-  --color-cream: #f7f8fc;
-
-  --shadow-soft: 0 20px 45px -20px rgb(79 70 229 / 0.35);
-  --shadow-card: 0 12px 32px -12px rgb(4 8 26 / 0.18);
-  --shadow-glow: 0 0 0 1px rgb(255 255 255 / 0.08), 0 24px 80px -24px rgb(99 102 241 / 0.55);
+  --shadow-soft: 0 20px 45px -22px rgb(5 7 15 / 0.25);
+  --shadow-card: 0 12px 32px -14px rgb(5 7 15 / 0.16);
 
   --animate-float: float 7s ease-in-out infinite;
   --animate-float-slow: float 10s ease-in-out infinite;
-  --animate-marquee: marquee 28s linear infinite;
+  --animate-marquee: marquee 30s linear infinite;
   --animate-pulse-ring: pulse-ring 2.4s ease-out infinite;
 }
 
@@ -58,13 +52,13 @@
 
 @keyframes pulse-ring {
   0% {
-    box-shadow: 0 0 0 0 rgb(34 211 238 / 0.5);
+    box-shadow: 0 0 0 0 rgb(184 221 30 / 0.55);
   }
   70% {
-    box-shadow: 0 0 0 12px rgb(34 211 238 / 0);
+    box-shadow: 0 0 0 12px rgb(184 221 30 / 0);
   }
   100% {
-    box-shadow: 0 0 0 0 rgb(34 211 238 / 0);
+    box-shadow: 0 0 0 0 rgb(184 221 30 / 0);
   }
 }
 
@@ -73,7 +67,7 @@ html {
 }
 
 body {
-  background: #f7f8fc;
+  background: #f4f5f0;
   color: #0f172a;
   font-family: var(--font-sans);
   overflow-x: hidden;
@@ -85,17 +79,25 @@ body {
   font-family: var(--font-display);
 }
 
-/* Gradient text — works on light backgrounds */
+/* Instrument Serif italic — the editorial accent */
+.font-accent {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+/* Gradient text — light backgrounds: ink into deep lime */
 .text-gradient {
-  background: linear-gradient(92deg, #4f46e5 0%, #06b6d4 100%);
+  background: linear-gradient(92deg, #05070f 20%, #4d7c0f 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-/* Gradient text for dark backgrounds */
+/* Gradient text — dark backgrounds: white into volt */
 .text-gradient-light {
-  background: linear-gradient(92deg, #ffffff 10%, #a5b4fc 55%, #67e8f9 100%);
+  background: linear-gradient(92deg, #ffffff 15%, #e4ff6a 90%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -103,7 +105,7 @@ body {
 
 /* Glass cards */
 .glass {
-  background: rgb(255 255 255 / 0.78);
+  background: rgb(255 255 255 / 0.82);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
 }
@@ -117,13 +119,13 @@ body {
 /* Light grid pattern */
 .bg-grid-soft {
   background-image:
-    linear-gradient(to right, rgb(15 23 42 / 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(15 23 42 / 0.05) 1px, transparent 1px);
+    linear-gradient(to right, rgb(5 7 15 / 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(5 7 15 / 0.055) 1px, transparent 1px);
   background-size: 44px 44px;
   mask-image: radial-gradient(ellipse 90% 80% at 50% 20%, black 55%, transparent 100%);
 }
 
-/* Dark grid pattern for midnight sections */
+/* Dark grid pattern for ink sections */
 .bg-grid-dark {
   background-image:
     linear-gradient(to right, rgb(255 255 255 / 0.06) 1px, transparent 1px),
@@ -134,11 +136,26 @@ body {
 
 /* Fine dotted texture */
 .bg-dots {
+  background-image: radial-gradient(rgb(5 7 15 / 0.12) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.bg-dots-light {
   background-image: radial-gradient(rgb(255 255 255 / 0.14) 1px, transparent 1px);
   background-size: 22px 22px;
 }
 
-/* Modern hairline ring for dark cards */
+/* Film-grain noise overlay (SVG turbulence, no assets needed) */
+.noise::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Hairline ring for dark cards */
 .ring-line {
   border: 1px solid rgb(255 255 255 / 0.1);
 }
@@ -150,13 +167,21 @@ body {
     0 24px 60px -28px rgb(0 0 0 / 0.7);
 }
 
+/* Giant footer wordmark */
+.wordmark-giant {
+  -webkit-text-stroke: 1px rgb(255 255 255 / 0.16);
+  color: transparent;
+  line-height: 0.9;
+  user-select: none;
+}
+
 ::selection {
-  background: #4f46e5;
-  color: #fff;
+  background: #d4f542;
+  color: #05070f;
 }
 
 :focus-visible {
-  outline: 2px solid #4f46e5;
+  outline: 2px solid #4d7c0f;
   outline-offset: 3px;
   border-radius: 6px;
 }
@@ -166,6 +191,6 @@ body {
   height: 6px;
 }
 .slim-scroll::-webkit-scrollbar-thumb {
-  background: rgb(99 102 241 / 0.35);
+  background: rgb(77 124 15 / 0.35);
   border-radius: 999px;
 }
