@@ -45,7 +45,7 @@ export default function ContactPage() {
         crumb="Contact"
       />
 
-      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         {/* Quick-contact cards */}
         <div className="grid gap-5 md:grid-cols-3">
           {cards.map((c) => (

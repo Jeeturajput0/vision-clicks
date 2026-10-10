@@ -49,7 +49,7 @@ function Counter({
 // Clean paper stats band under the hero
 export default function Stats() {
   return (
-    <section aria-label="Company statistics" className="relative bg-white pb-2">
+    <section aria-label="Company statistics" className="relative bg-white ">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.dl
           initial={{ opacity: 0, y: 28 }}

@@ -32,19 +32,7 @@ export default function Hero() {
         <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
           {/* Left */}
           <div>
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2.5 rounded-full border border-slate-900/10 bg-white py-1.5 pr-4 pl-1.5 shadow-sm"
-            >
-              <span className="animate-pulse-ring inline-flex items-center gap-1 rounded-full bg-[#05070f] px-2.5 py-1 text-[11px] font-black text-volt-300">
-                <Zap className="h-3 w-3" /> AVAILABLE
-              </span>
-              <span className="text-xs font-semibold text-slate-600">
-                Booking 2026 projects — 2 slots left
-              </span>
-            </motion.div>
+           
 
             <motion.h1
               initial={{ opacity: 0, y: 28 }}

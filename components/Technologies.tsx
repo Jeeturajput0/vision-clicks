@@ -7,10 +7,9 @@ import { technologies } from "@/data/technologies";
 // Technology showcase — ink chips on paper
 export default function Technologies() {
   return (
-    <section aria-label="Technologies we master" className="py-16 sm:py-20">
+    <section aria-label="Technologies we master" className="py-16 sm:py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          eyebrow="Stack"
           title="Built on a modern,"
           highlight="proven stack"
           description="Production-grade frameworks and clouds — chosen for speed, security and scale."

@@ -1,34 +1,24 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronLeft, ChevronRight, Star, Quote } from "lucide-react";
+import { Star, Quote } from "lucide-react";
 import SectionHeading from "./SectionHeading";
 import { testimonials } from "@/data/testimonials";
-import { cn } from "@/lib/utils";
 
 const AUTOPLAY_DELAY = 2000;
 
-// Paper testimonial carousel — big serif quotes + autoslide
+// Paper testimonial carousel — infinite autoslide, never stops
 export default function Testimonials() {
   const [index, setIndex] = useState(0);
-  const [direction, setDirection] = useState(1);
-  const [paused, setPaused] = useState(false);
-  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
- 
-
-  // Autoslide — pauses on hover / focus / touch, resumes on leave
+  // Non-stop infinite loop: last -> first -> continue
   useEffect(() => {
-    if (paused) return;
-    timerRef.current = setInterval(() => {
-      setDirection(1);
+    const id = setInterval(() => {
       setIndex((prev) => (prev + 1) % testimonials.length);
     }, AUTOPLAY_DELAY);
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-    };
-  }, [paused, index]);
+    return () => clearInterval(id);
+  }, []);
 
   const current = testimonials[index];
 
@@ -42,23 +32,14 @@ export default function Testimonials() {
           description="Real feedback from businesses we've helped grow."
         />
 
-        <div
-          className="relative mt-10"
-          onMouseEnter={() => setPaused(true)}
-          onMouseLeave={() => setPaused(false)}
-          onFocus={() => setPaused(true)}
-          onBlur={() => setPaused(false)}
-          onTouchStart={() => setPaused(true)}
-          onTouchEnd={() => setPaused(false)}
-        >
+        <div className="relative mt-10">
           <div className="overflow-hidden pt-2">
-            <AnimatePresence mode="wait" custom={direction}>
+            <AnimatePresence mode="wait">
               <motion.figure
                 key={index}
-                custom={direction}
-                initial={{ opacity: 0, x: 60 * direction }}
+                initial={{ opacity: 0, x: 60 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -60 * direction }}
+                exit={{ opacity: 0, x: -60 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
                 className="mx-auto max-w-3xl rounded-[1.75rem] border border-slate-900/10 bg-white p-8 text-center shadow-[0_24px_60px_-30px_rgb(5_7_15/0.35)] sm:p-10"
               >
@@ -84,27 +65,6 @@ export default function Testimonials() {
                 </figcaption>
               </motion.figure>
             </AnimatePresence>
-          </div>
-
-          {/* Controls */}
-          <div className="mt-7 flex items-center justify-center gap-4">
-           
-            {/* <div className="flex items-center gap-2" role="tablist" aria-label="Testimonial pages">
-              {testimonials.map((t, i) => (
-                <button
-                  key={t.name}
-                  type="button"
-                  role="tab"
-                  aria-selected={i === index}
-                  aria-label={`Go to testimonial ${i + 1}`}
-                  className={cn(
-                    "h-2 rounded-full transition-all",
-                    i === index ? "w-8 bg-[#05070f]" : "w-2 bg-slate-300 hover:bg-slate-400"
-                  )}
-                />
-              ))}
-            </div> */}
-           
           </div>
         </div>
       </div>

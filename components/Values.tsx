@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Flame, Lightbulb, BadgeCheck, Users } from "lucide-react";
+import { Flame, Lightbulb, BadgeCheck, Users, ArrowUpRight } from "lucide-react";
 import SectionHeading from "./SectionHeading";
 
 const values = [
@@ -9,52 +9,59 @@ const values = [
     icon: Flame,
     title: "Passion",
     text: "Energy and creativity in every sprint — we care about outcomes, not just output.",
-    iconBg: "bg-gradient-to-br from-rose-500 to-orange-500",
+    stat: "Outcome first",
   },
   {
     icon: Lightbulb,
     title: "Innovation",
     text: "New tools, better patterns. We bring modern stacks that cut cost and ship faster.",
-    iconBg: "bg-gradient-to-br from-amber-500 to-yellow-500",
+    stat: "Modern stack",
   },
   {
     icon: BadgeCheck,
     title: "Quality",
     text: "Reviews, tests, CI/CD and docs by default. Highest bar from code to support.",
-    iconBg: "bg-gradient-to-br from-lime-500 to-lime-700",
+    stat: "Zero compromise",
   },
   {
     icon: Users,
     title: "Collaboration",
     text: "Weekly demos and shared roadmaps — you always know what's next.",
-    iconBg: "bg-gradient-to-br from-[#05070f] to-lime-800",
+    stat: "Full transparency",
   },
 ];
 
-// Core values — modern minimal cards
+// Values — same clean paper theme as WhyChoose (ink icons + volt accents)
 export default function Values() {
   return (
-    <section aria-label="Our core values" className="py-14 sm:py-16">
+    <section aria-label="Our core values" className="relative scroll-mt-28 py-16 sm:py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading eyebrow="Culture" title="Driven by" highlight="values" />
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {values.map((v, i) => (
+        <SectionHeading
+          // eyebrow="Our values"
+          title="Driven by"
+          highlight="values"
+          description="The principles that shape how we build, collaborate, and deliver."
+        />
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {values.map((c, i) => (
             <motion.article
-              key={v.title}
+              key={c.title}
               initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
               whileHover={{ y: -8 }}
-              className="group rounded-3xl border border-slate-200/70 bg-white p-6 shadow-[0_14px_36px_-24px_rgb(4_8_26/0.3)] transition-shadow hover:shadow-[0_24px_48px_-20px_rgb(79_70_229/0.35)]"
+              className="group rounded-3xl border border-slate-900/10 bg-white p-6 shadow-[0_14px_36px_-24px_rgb(5_7_15/0.3)] transition-shadow hover:shadow-[0_26px_50px_-22px_rgb(5_7_15/0.35)]"
             >
-              <div
-                className={`grid h-12 w-12 place-items-center rounded-2xl text-white shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6 ${v.iconBg}`}
-              >
-                <v.icon className="h-6 w-6" aria-hidden="true" />
+              <div className="flex items-center justify-between">
+                <div className="grid h-11 w-11 place-items-center rounded-2xl bg-[#05070f] text-volt-300 shadow-lg transition-transform duration-300 group-hover:scale-110">
+                  <c.icon className="h-5 w-5" aria-hidden="true" />
+                </div>
+                <ArrowUpRight className="h-4 w-4 text-slate-300 transition group-hover:text-lime-700" />
               </div>
-              <h3 className="font-display mt-5 text-lg font-bold text-slate-900">{v.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-600">{v.text}</p>
+              <p className="font-display mt-4 font-mono text-[13px] font-bold tracking-wide text-lime-700 uppercase">{c.stat}</p>
+              <h3 className="font-display mt-1 text-[17px] font-bold text-[#05070f]">{c.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-600">{c.text}</p>
             </motion.article>
           ))}
         </div>

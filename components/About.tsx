@@ -8,10 +8,9 @@ import SectionHeading from "./SectionHeading";
 // About Vision Clicks — modern split with experience badge
 export default function About() {
   return (
-    <section id="about" className="relative scroll-mt-28 py-16 sm:py-10 lg:py-8">
+    <section id="about" className="relative scroll-mt-28  sm:py-10 lg:py-2">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          eyebrow="Who we are"
           title="A product team, not just"
           highlight="a vendor"
           description="Since 2014, we've helped startups and enterprises design, build and scale reliable software — from discovery and UX to cloud-native delivery and long-term support."

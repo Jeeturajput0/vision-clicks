@@ -151,7 +151,7 @@ function ServiceCard({
 }
 
 export default function Services() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
     <section id="services" className="scroll-mt-8 py-5 sm:py-10">
