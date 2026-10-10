@@ -1,26 +1,171 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, sans-serif;
+  --font-display: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Modern midnight + electric indigo + cyan system */
+  --color-ink-950: #04081a;
+  --color-ink-900: #0a1330;
+  --color-ink-800: #131f49;
+  --color-ink-700: #1e2d5f;
+  --color-ink-600: #475569;
+  --color-ink-500: #64748b;
+
+  --color-royal-50: #eef2ff;
+  --color-royal-100: #e0e7ff;
+  --color-royal-200: #c7d2fe;
+  --color-royal-400: #818cf8;
+  --color-royal-500: #6366f1;
+  --color-royal-600: #4f46e5;
+  --color-royal-700: #4338ca;
+
+  --color-mint-300: #67e8f9;
+  --color-mint-400: #22d3ee;
+  --color-mint-500: #06b6d4;
+
+  --color-cream: #f7f8fc;
+
+  --shadow-soft: 0 20px 45px -20px rgb(79 70 229 / 0.35);
+  --shadow-card: 0 12px 32px -12px rgb(4 8 26 / 0.18);
+  --shadow-glow: 0 0 0 1px rgb(255 255 255 / 0.08), 0 24px 80px -24px rgb(99 102 241 / 0.55);
+
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-float-slow: float 10s ease-in-out infinite;
+  --animate-marquee: marquee 28s linear infinite;
+  --animate-pulse-ring: pulse-ring 2.4s ease-out infinite;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
   }
 }
 
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgb(34 211 238 / 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgb(34 211 238 / 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgb(34 211 238 / 0);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f8fc;
+  color: #0f172a;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Gradient text — works on light backgrounds */
+.text-gradient {
+  background: linear-gradient(92deg, #4f46e5 0%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Gradient text for dark backgrounds */
+.text-gradient-light {
+  background: linear-gradient(92deg, #ffffff 10%, #a5b4fc 55%, #67e8f9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Glass cards */
+.glass {
+  background: rgb(255 255 255 / 0.78);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.glass-dark {
+  background: rgb(255 255 255 / 0.06);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* Light grid pattern */
+.bg-grid-soft {
+  background-image:
+    linear-gradient(to right, rgb(15 23 42 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(15 23 42 / 0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 20%, black 55%, transparent 100%);
+}
+
+/* Dark grid pattern for midnight sections */
+.bg-grid-dark {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 85% 75% at 50% 0%, black 60%, transparent 100%);
+}
+
+/* Fine dotted texture */
+.bg-dots {
+  background-image: radial-gradient(rgb(255 255 255 / 0.14) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Modern hairline ring for dark cards */
+.ring-line {
+  border: 1px solid rgb(255 255 255 / 0.1);
+}
+
+/* Subtle top highlight on dark cards */
+.card-highlight {
+  box-shadow:
+    inset 0 1px 0 0 rgb(255 255 255 / 0.12),
+    0 24px 60px -28px rgb(0 0 0 / 0.7);
+}
+
+::selection {
+  background: #4f46e5;
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid #4f46e5;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Thin custom scrollbar for horizontal strips */
+.slim-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+.slim-scroll::-webkit-scrollbar-thumb {
+  background: rgb(99 102 241 / 0.35);
+  border-radius: 999px;
 }
