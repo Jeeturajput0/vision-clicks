@@ -29,11 +29,11 @@ function InstagramIcon({ className }: { className?: string }) {
 }
 
 const serviceLinks = [
-  "Enterprise Solutions",
+  "Web Development",
+  "Mobile App Development",
   "Software Development",
-  "Digital Marketing",
-  "Mobile Applications",
-  "Web Services",
+  "UI/UX Design",
+  "Digital Solutions",
 ];
 
 const companyLinks = [
