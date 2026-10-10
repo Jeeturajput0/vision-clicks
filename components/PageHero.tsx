@@ -26,7 +26,7 @@ export default function PageHero({ eyebrow, title, highlight, description, crumb
         </div>
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <motion.nav
+          {/* <motion.nav
             aria-label="Breadcrumb"
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
@@ -41,7 +41,7 @@ export default function PageHero({ eyebrow, title, highlight, description, crumb
             <span aria-current="page" className="text-lime-800">
               {crumb}
             </span>
-          </motion.nav>
+          </motion.nav> */}
 
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -49,10 +49,10 @@ export default function PageHero({ eyebrow, title, highlight, description, crumb
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mt-5 max-w-3xl"
           >
-            <span className="inline-flex items-center gap-2 rounded-full bg-[#05070f] px-3.5 py-1.5 font-mono text-[11px] font-bold tracking-[0.18em] text-volt-300 uppercase">
+            {/* <span className="inline-flex items-center gap-2 rounded-full bg-[#05070f] px-3.5 py-1.5 font-mono text-[11px] font-bold tracking-[0.18em] text-volt-300 uppercase">
               <span className="h-1.5 w-1.5 rounded-full bg-volt-400" />
               {eyebrow}
-            </span>
+            </span> */}
             <h1 className="font-display mt-5 text-4xl font-bold tracking-tight text-balance text-[#05070f] sm:text-5xl lg:text-6xl">
               {title} <span className="font-accent font-normal text-gradient">{highlight}</span>
             </h1>
