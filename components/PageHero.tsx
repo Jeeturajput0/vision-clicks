@@ -15,10 +15,10 @@ type Props = {
 };
 
 // Clean paper page hero with breadcrumb — shared by all sub-pages
-export default function PageHero({  title, highlight, description, crumb, trail = true }: Props) {
+export default function PageHero({ eyebrow, title, highlight, description, crumb, trail = true }: Props) {
   return (
     <>
-      <section className="relative overflow-hidden bg-white pt-32 pb-16 sm:pt-40 sm:pb-15">
+      <section className="relative overflow-hidden bg-white pt-32 pb-16 sm:pt-20 sm:pb-15">
         <div aria-hidden="true" className="pointer-events-none absolute inset-0">
           <div className="bg-grid-soft absolute inset-0" />
           <div className="absolute -top-32 left-1/2 h-[22rem] w-[46rem] -translate-x-1/2 rounded-full bg-volt-300/40 blur-[130px]" />
@@ -26,7 +26,25 @@ export default function PageHero({  title, highlight, description, crumb, trail 
         </div>
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        
+          {/* <motion.nav
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            aria-label="Breadcrumb"
+            className="flex items-center gap-1.5 text-[13px] font-semibold text-slate-500"
+          >
+            <Link
+              href="/"
+              className="flex items-center gap-1.5 transition hover:text-[#10346c]"
+            >
+              <House className="h-3.5 w-3.5" />
+              Home
+            </Link>
+            <ChevronRight className="h-3.5 w-3.5 text-slate-300" />
+            <span aria-current="page" className="text-[#10346c]">
+              {crumb}
+            </span>
+          </motion.nav> */}
 
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -34,6 +52,9 @@ export default function PageHero({  title, highlight, description, crumb, trail 
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mt-5 max-w-3xl"
           >
+            <p className="font-mono text-[11px] font-bold tracking-[0.24em] text-brand-700 uppercase">
+              {eyebrow}
+            </p>
             <h1 className="font-display mt-5 text-4xl font-bold tracking-tight text-balance text-[#10346c] sm:text-5xl lg:text-6xl">
               {title} <span className="font-accent font-normal text-gradient">{highlight}</span>
             </h1>

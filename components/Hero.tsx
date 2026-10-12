@@ -4,7 +4,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
-  ArrowUpRight,
   BadgeCheck,
   PlayCircle,
   ShieldCheck,
@@ -463,27 +462,7 @@ export default function Hero() {
         </div>
 
         {/* Client wordmarks */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.55, duration: 0.6 }}
-          className="mt-16 border-t border-slate-900/10 pt-8"
-        >
-          <p className="text-center font-mono text-[11px] font-bold tracking-[0.24em] text-slate-400 uppercase">
-            Trusted by modern teams worldwide
-          </p>
-          <div className="mt-5 flex items-center gap-8 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
-            <div className="animate-marquee flex shrink-0 items-center gap-12 pr-12">
-              {[...logos, ...logos].map((l, i) => (
-                <span key={i} className="font-display flex items-center gap-3 text-lg font-bold whitespace-nowrap text-black transition hover:text-[#10346c]">
-                  <span className="h-1.5 w-1.5 rounded-full bg-volt-500" />
-                  {l}
-                </span>
-              ))}
-            </div>
-          </div>
-
-        </motion.div>
+       
       </div>
     </section>
   );

@@ -6,14 +6,21 @@ import Process from "@/components/Process";
 import WhyChoose from "@/components/WhyChoose";
 import Testimonials from "@/components/Testimonials";
 import Technologies from "@/components/Technologies";
-
+import TrustedTeams from "@/components/TrustedTeams";
+const logos = [
+  "TechCorp",
+  "Innovate Labs",
+  "DigitalWorks",
+  "CloudNova",
+];
 
 // Home page — clean paper narrative, ink + volt, no blue
 export default function Home() {
   return (
     <>
       <Hero />
-      <Stats />
+      <Stats /> 
+      <TrustedTeams logos={logos} />
       {/* <Work /> */}
       <About />
       <Services />

@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
 import { technologies } from "@/data/technologies";
 
@@ -20,8 +19,10 @@ import {
   SiRedis,
   SiFigma,
 } from "react-icons/si";
+import { BrainCircuit, Cloud } from "lucide-react";
+import type { ComponentType } from "react";
 
-const techIcons = {
+const techIcons: Record<string, ComponentType<{ className?: string }>> = {
   React: SiReact,
   "Next.js": SiNextdotjs,
   "Node.js": SiNodedotjs,
@@ -29,12 +30,14 @@ const techIcons = {
   JavaScript: SiJavascript,
   PHP: SiPhp,
   Laravel: SiLaravel,
+  AWS: Cloud,
   Docker: SiDocker,
   PostgreSQL: SiPostgresql,
   MongoDB: SiMongodb,
   TypeScript: SiTypescript,
   GraphQL: SiGraphql,
   Redis: SiRedis,
+  "AI & ML": BrainCircuit,
   Figma: SiFigma,
 };
 export default function Technologies() {
@@ -47,36 +50,28 @@ export default function Technologies() {
           description="Production-grade frameworks and clouds — chosen for speed, security and scale."
         />
 
-        <div className="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-4">
-          {technologies.map((technology, index) => {
-            let Icon = techIcons[technology.name];
+        {/* Seamless infinite loop: 2 identical copies, 0 -> -50%.
+            Last card connects straight back to first — no gap, no reset.
+            Auto-slides one direction forever, pauses on hover. */}
+        <div className="mt-10 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
+          <div className="animate-marquee-slow flex w-max py-2 [will-change:transform] hover:[animation-play-state:paused]">
+            {[0, 1].map((copy) => (
+              <div
+                key={copy}
+                aria-hidden={copy === 1}
+                className="flex shrink-0 gap-4 pr-4"
+              >
+                {technologies.map((technology) => {
+                  const Icon = techIcons[technology.name];
 
-            return (
-              <motion.div
-                key={technology.name}
-                initial={{
-                  opacity: 0,
-                  y: 20,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                viewport={{
-                  once: true,
-                  margin: "-40px",
-                }}
-                transition={{
-                  duration: 0.4,
-                  delay: index * 0.05,
-                }}
-                whileHover={{
-                  y: -6,
-                  scale: 1.01,
-                }}
-                className="
+                  return (
+                    <div
+                      key={copy === 0 ? technology.name : `${technology.name}-dup`}
+                      className="
                   group
                   flex
+                  w-[240px]
+                  shrink-0
                   items-center
                   gap-4
                   rounded-2xl
@@ -87,13 +82,16 @@ export default function Technologies() {
                   shadow-[0_10px_28px_-22px_rgb(16_52_108/0.3)]
                   transition-all
                   duration-300
+                  hover:-translate-y-1.5
                   hover:border-[#2374B9]/40
                   hover:shadow-[0_20px_36px_-20px_rgb(35_116_185/0.35)]
+                  sm:w-[260px]
+                  lg:w-[280px]
                 "
-              >
-                {/* Technology Icon */}
-                <span
-                  className={`
+                    >
+                      {/* Technology Icon */}
+                      <span
+                        className={`
                     grid
                     h-12
                     w-12
@@ -106,29 +104,32 @@ export default function Technologies() {
                     duration-300
                     group-hover:scale-110
                   `}
-                >
-                  {Icon ? (
-                    <Icon className="text-xl" />
-                  ) : (
-                    <span className="font-mono text-sm font-bold">
-                      {technology.symbol}
-                    </span>
-                  )}
-                </span>
+                      >
+                        {Icon ? (
+                          <Icon className="text-xl" />
+                        ) : (
+                          <span className="font-mono text-sm font-bold">
+                            {technology.symbol}
+                          </span>
+                        )}
+                      </span>
 
-                {/* Technology Details */}
-                <span className="min-w-0">
-                  <span className="block truncate font-display text-[15px] font-bold text-[#10346C]">
-                    {technology.name}
-                  </span>
+                      {/* Technology Details */}
+                      <span className="min-w-0">
+                        <span className="block truncate font-display text-[15px] font-bold text-[#10346C]">
+                          {technology.name}
+                        </span>
 
-                  <span className="mt-0.5 block font-mono text-[10px] uppercase tracking-wider text-slate-500">
-                    Production ready
-                  </span>
-                </span>
-              </motion.div>
-            );
-          })}
+                        <span className="mt-0.5 block font-mono text-[10px] uppercase tracking-wider text-slate-500">
+                          Production ready
+                        </span>
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

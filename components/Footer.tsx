@@ -102,13 +102,15 @@ export default function Footer() {
             </p>
             <div className="mt-5 flex gap-3">
               {[
-                { icon: FacebookIcon, label: "Facebook" },
-                { icon: LinkedInIcon, label: "LinkedIn" },
-                { icon: InstagramIcon, label: "Instagram" },
+                { icon: FacebookIcon, label: "Facebook", href: "https://facebook.com/thevisionclicks" },
+                { icon: LinkedInIcon, label: "LinkedIn", href: "https://linkedin.com/company/thevisionclicks" },
+                { icon: InstagramIcon, label: "Instagram", href: "https://instagram.com/thevisionclicks" },
               ].map((s) => (
                 <a
                   key={s.label}
-                  href="/"
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={`Vision Clicks on ${s.label}`}
                   className="grid h-9 w-9 place-items-center rounded-full border border-white/10 bg-white/[0.06] text-white/70 transition hover:border-transparent hover:bg-volt-400 hover:text-[#05070f]"
                 >

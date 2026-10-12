@@ -29,10 +29,9 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close mobile menu on route change
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
+  // Close mobile menu on route change.
+  // Each mobile <Link> already calls setOpen(false) onClick,
+  // so no pathname effect is needed (avoids set-state-in-effect).
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);

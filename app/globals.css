@@ -52,6 +52,7 @@
   --animate-float: float 7s ease-in-out infinite;
   --animate-float-slow: float 10s ease-in-out infinite;
   --animate-marquee: marquee 30s linear infinite;
+  --animate-marquee-slow: marquee 45s linear infinite;
   --animate-pulse-ring: pulse-ring 2.4s ease-out infinite;
 }
 
@@ -217,4 +218,12 @@ body {
 .slim-scroll::-webkit-scrollbar-thumb {
   background: rgb(35 116 185 / 0.35);
   border-radius: 999px;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-marquee-slow {
+    animation: none;
+  }
 }
