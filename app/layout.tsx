@@ -51,7 +51,7 @@ export default function RootLayout({
 }) {
   return (
       <html lang="en" className={`${inter.variable} ${display.variable} ${accent.variable} h-full scroll-smooth`}>
-      <body className="flex min-h-full flex-col bg-[#f4f5f0] font-sans text-slate-900 antialiased">
+      <body className="flex min-h-full flex-col bg-[#F3F7FC] font-sans text-slate-900 antialiased">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

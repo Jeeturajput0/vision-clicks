@@ -47,7 +47,7 @@ export default function FAQ() {
           highlight="Answered."
           description="Everything clients usually ask before starting. Something else on your mind?"
         />
-        <div className="mt-10 overflow-hidden rounded-[1.75rem] border border-slate-200/70 bg-white shadow-[0_14px_36px_-24px_rgb(5_7_15/0.3)]">
+        <div className="mt-10 overflow-hidden rounded-[1.75rem] border border-slate-200/70 bg-white shadow-[0_14px_36px_-24px_rgb(16_52_108/0.3)]">
           {faqs.map((f, i) => {
             const isOpen = open === i;
             return (
@@ -64,7 +64,7 @@ export default function FAQ() {
                   <span
                     className={cn(
                       "grid h-9 w-9 shrink-0 place-items-center rounded-full transition-all duration-300",
-                      isOpen ? "rotate-45 bg-[#05070f] text-volt-300" : "bg-slate-100 text-slate-600"
+                      isOpen ? "rotate-45 bg-[#10346c] text-volt-300" : "bg-slate-100 text-slate-600"
                     )}
                   >
                     <Plus className="h-4 w-4" />
@@ -91,7 +91,7 @@ export default function FAQ() {
         </div>
         <p className="mt-6 text-center text-sm text-slate-500">
           Still curious?{" "}
-          <Link href="/contact" className="inline-flex items-center gap-1 font-bold text-lime-800 hover:text-[#05070f]">
+          <Link href="/contact" className="inline-flex items-center gap-1 font-bold text-brand-800 hover:text-[#10346c]">
             <MessageCircle className="h-4 w-4" /> Ask us anything
           </Link>
         </p>

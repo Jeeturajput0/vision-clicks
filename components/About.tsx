@@ -28,7 +28,7 @@ export default function About() {
               <span className="text-sm leading-tight font-semibold text-slate-500">
                 years of<br />shipping software
               </span>
-              <span className="ml-2 hidden rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-700 sm:inline-block">
+              <span className="ml-2 hidden rounded-full bg-brand-50 px-3 py-1 text-xs font-bold text-brand-700 sm:inline-block">
                 ● Available now
               </span>
             </div>
@@ -47,7 +47,7 @@ export default function About() {
                 { t: "Quality-first agile delivery", d: "QA, CI/CD, docs included" },
               ].map((item) => (
                 <li key={item.t} className="flex items-start gap-3 rounded-2xl border border-slate-200/70 bg-white p-4">
-                  <BadgeCheck className="mt-0.5 h-5 w-5 shrink-0 text-lime-700" />
+                  <BadgeCheck className="mt-0.5 h-5 w-5 shrink-0 text-brand-700" />
                   <span>
                     <span className="block text-[15px] font-bold text-slate-800">{item.t}</span>
                     <span className="block text-[13px] text-slate-500">{item.d}</span>
@@ -57,7 +57,7 @@ export default function About() {
             </ul>
             <a
               href="/services"
-              className="group mt-7 inline-flex items-center gap-2 rounded-xl bg-[#05070f] px-5 py-3 text-sm font-bold text-white transition hover:bg-lime-700"
+              className="group mt-7 inline-flex items-center gap-2 rounded-xl bg-[#10346c] px-5 py-3 text-sm font-bold text-white transition hover:bg-brand-700"
             >
               Explore our capabilities
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -71,7 +71,7 @@ export default function About() {
             transition={{ duration: 0.65 }}
             className="relative"
           >
-            <div aria-hidden="true" className="absolute -inset-5 rounded-[2.5rem] bg-gradient-to-br from-lime-200/70 via-volt-200/50 to-transparent blur-2xl" />
+            <div aria-hidden="true" className="absolute -inset-5 rounded-[2.5rem] bg-gradient-to-br from-brand-200/70 via-volt-200/50 to-transparent blur-2xl" />
             <div className="group relative overflow-hidden rounded-[2rem] border border-white shadow-[0_28px_60px_-24px_rgb(4_8_26/0.4)]">
               <Image
                 src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"
@@ -81,10 +81,10 @@ export default function About() {
                 loading="lazy"
                 className="h-[300px] w-full object-cover transition-transform duration-700 group-hover:scale-105 sm:h-[420px]"
               />
-              <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#04081a]/85 via-transparent to-transparent" />
+              <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#0b254d]/85 via-transparent to-transparent" />
               <div className="absolute right-5 bottom-5 left-5 flex items-center justify-between gap-3 rounded-2xl border border-white/20 bg-white/10 p-4 backdrop-blur-xl">
                 <div className="flex items-center gap-3">
-                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-white font-black text-[#0a1330]">
+                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-white font-black text-[#10346c]">
                     50+
                   </span>
                   <div>
@@ -94,7 +94,7 @@ export default function About() {
                     </p>
                   </div>
                 </div>
-                <span className="rounded-full bg-emerald-400 px-3 py-1 text-xs font-bold text-emerald-950">
+                <span className="rounded-full bg-brand-300 px-3 py-1 text-xs font-bold text-brand-900">
                   Hiring
                 </span>
               </div>

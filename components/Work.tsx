@@ -56,7 +56,7 @@ export default function Work() {
           />
           <Link
             href="/contact"
-            className="group inline-flex shrink-0 items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-bold text-slate-900 transition hover:border-[#05070f] hover:bg-[#05070f] hover:text-white"
+            className="group inline-flex shrink-0 items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-bold text-slate-900 transition hover:border-[#10346c] hover:bg-[#10346c] hover:text-white"
           >
             Become our next story
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -71,7 +71,7 @@ export default function Work() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.55, delay: (i % 2) * 0.1 }}
-              className={`group relative overflow-hidden rounded-[1.75rem] bg-[#05070f] ${p.span}`}
+              className={`group relative overflow-hidden rounded-[1.75rem] bg-[#10346c] ${p.span}`}
             >
               <Image
                 src={p.img}
@@ -81,7 +81,7 @@ export default function Work() {
                 loading="lazy"
                 className="h-[300px] w-full object-cover opacity-90 transition-all duration-700 group-hover:scale-105 group-hover:opacity-100 sm:h-[360px]"
               />
-              <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#05070f] via-[#05070f]/35 to-transparent" />
+              <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#10346c] via-[#10346c]/35 to-transparent" />
               {/* top tags */}
               <div className="absolute top-4 left-4 flex flex-wrap gap-2">
                 {p.tags.map((t) => (
@@ -90,7 +90,7 @@ export default function Work() {
                   </span>
                 ))}
               </div>
-              <span className="absolute top-4 right-4 grid h-10 w-10 place-items-center rounded-full bg-white text-[#05070f] opacity-0 transition-all duration-300 group-hover:opacity-100">
+              <span className="absolute top-4 right-4 grid h-10 w-10 place-items-center rounded-full bg-white text-[#10346c] opacity-0 transition-all duration-300 group-hover:opacity-100">
                 <ArrowUpRight className="h-4 w-4" />
               </span>
               {/* bottom */}
@@ -98,7 +98,7 @@ export default function Work() {
                 <h3 className="font-display max-w-md text-lg font-bold text-white sm:text-xl">
                   {p.title}
                 </h3>
-                <span className="rounded-full bg-volt-400 px-3.5 py-1.5 font-mono text-xs font-black text-[#05070f]">
+                <span className="rounded-full bg-volt-400 px-3.5 py-1.5 font-mono text-xs font-black text-[#10346c]">
                   {p.result}
                 </span>
               </div>

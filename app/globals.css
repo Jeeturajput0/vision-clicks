@@ -6,24 +6,48 @@
   --font-display: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-accent: "Instrument Serif", ui-serif, Georgia, serif;
 
-  /* Paper + ink + volt signature system — no blue */
-  --color-ink-950: #05070f;
-  --color-ink-900: #0a0f22;
-  --color-ink-800: #141b33;
-  --color-ink-700: #232c4e;
-  --color-ink-600: #475569;
+  /* Brand blue system — matches logo */
+  --color-brand-50: #f3f7fc;
+  --color-brand-100: #dce9f8;
+  --color-brand-200: #b9d4f1;
+  --color-brand-300: #79b4ed;
+  --color-brand-400: #4a72b8;
+  --color-brand-500: #2374b9;
+  --color-brand-600: #1d63a0;
+  --color-brand-700: #184e80;
+  --color-brand-800: #14386e;
+  --color-brand-900: #10346c;
+
+  /* Navy — text / header / dark sections */
+  --color-navy-950: #0b254d;
+  --color-navy-900: #10346c;
+  --color-navy-800: #14386e;
+  --color-navy-700: #184e80;
+
+  /* Gold accent */
+  --color-gold-300: #e3c476;
+  --color-gold-400: #d4af52;
+  --color-gold-500: #c89a3d;
+  --color-gold-600: #a87f2c;
+
+  /* Ink aliases — kept so existing ink-* classes turn navy */
+  --color-ink-950: #10346c;
+  --color-ink-900: #0b254d;
+  --color-ink-800: #14386e;
+  --color-ink-700: #184e80;
+  --color-ink-600: #4a72b8;
   --color-ink-500: #64748b;
 
-  /* Signature volt — high-energy accents */
-  --color-volt-200: #eefbb0;
-  --color-volt-300: #e4ff6a;
-  --color-volt-400: #d4f542;
-  --color-volt-500: #b8dd1e;
+  /* Volt aliases — remapped to brand blues so old volt-* classes turn blue */
+  --color-volt-200: #dce9f8;
+  --color-volt-300: #79b4ed;
+  --color-volt-400: #79b4ed;
+  --color-volt-500: #2374b9;
 
-  --color-cream: #f4f5f0;
+  --color-cream: #f3f7fc;
 
-  --shadow-soft: 0 20px 45px -22px rgb(5 7 15 / 0.25);
-  --shadow-card: 0 12px 32px -14px rgb(5 7 15 / 0.16);
+  --shadow-soft: 0 20px 45px -22px rgb(16 52 108 / 0.25);
+  --shadow-card: 0 12px 32px -14px rgb(16 52 108 / 0.16);
 
   --animate-float: float 7s ease-in-out infinite;
   --animate-float-slow: float 10s ease-in-out infinite;
@@ -52,13 +76,13 @@
 
 @keyframes pulse-ring {
   0% {
-    box-shadow: 0 0 0 0 rgb(184 221 30 / 0.55);
+    box-shadow: 0 0 0 0 rgb(35 116 185 / 0.55);
   }
   70% {
-    box-shadow: 0 0 0 12px rgb(184 221 30 / 0);
+    box-shadow: 0 0 0 12px rgb(35 116 185 / 0);
   }
   100% {
-    box-shadow: 0 0 0 0 rgb(184 221 30 / 0);
+    box-shadow: 0 0 0 0 rgb(35 116 185 / 0);
   }
 }
 
@@ -67,7 +91,7 @@ html {
 }
 
 body {
-  background: #f4f5f0;
+  background: #f3f7fc;
   color: #0f172a;
   font-family: var(--font-sans);
   overflow-x: hidden;
@@ -87,17 +111,17 @@ body {
   letter-spacing: -0.01em;
 }
 
-/* Gradient text — light backgrounds: ink into deep lime */
+/* Gradient text — light backgrounds: navy into brand blue */
 .text-gradient {
-  background: linear-gradient(92deg, #05070f 20%, #4d7c0f 100%);
+  background: linear-gradient(92deg, #10346c 20%, #2374b9 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-/* Gradient text — dark backgrounds: white into volt */
+/* Gradient text — dark backgrounds: white into sky blue */
 .text-gradient-light {
-  background: linear-gradient(92deg, #ffffff 15%, #e4ff6a 90%);
+  background: linear-gradient(92deg, #ffffff 15%, #79b4ed 90%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -119,8 +143,8 @@ body {
 /* Light grid pattern */
 .bg-grid-soft {
   background-image:
-    linear-gradient(to right, rgb(5 7 15 / 0.055) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(5 7 15 / 0.055) 1px, transparent 1px);
+    linear-gradient(to right, rgb(16 52 108 / 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(16 52 108 / 0.055) 1px, transparent 1px);
   background-size: 44px 44px;
   mask-image: radial-gradient(ellipse 90% 80% at 50% 20%, black 55%, transparent 100%);
 }
@@ -136,7 +160,7 @@ body {
 
 /* Fine dotted texture */
 .bg-dots {
-  background-image: radial-gradient(rgb(5 7 15 / 0.12) 1px, transparent 1px);
+  background-image: radial-gradient(rgb(16 52 108 / 0.12) 1px, transparent 1px);
   background-size: 22px 22px;
 }
 
@@ -176,12 +200,12 @@ body {
 }
 
 ::selection {
-  background: #d4f542;
-  color: #05070f;
+  background: #2374b9;
+  color: #ffffff;
 }
 
 :focus-visible {
-  outline: 2px solid #4d7c0f;
+  outline: 2px solid #2374b9;
   outline-offset: 3px;
   border-radius: 6px;
 }
@@ -191,6 +215,6 @@ body {
   height: 6px;
 }
 .slim-scroll::-webkit-scrollbar-thumb {
-  background: rgb(77 124 15 / 0.35);
+  background: rgb(35 116 185 / 0.35);
   border-radius: 999px;
 }

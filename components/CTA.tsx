@@ -44,7 +44,7 @@ export default function CTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, ease: [0.21, 0.47, 0.32, 0.98] }}
-          className="noise card-highlight group relative overflow-hidden rounded-[2rem] bg-[#05070f] ring-1 ring-white/10 shadow-[0_40px_120px_-30px_rgba(5,7,15,0.7)] sm:rounded-[2.5rem]"
+          className="noise card-highlight group relative overflow-hidden rounded-[2rem] bg-[#10346c] ring-1 ring-white/10 shadow-[0_40px_120px_-30px_rgba(16,52,108,0.7)] sm:rounded-[2.5rem]"
         >
           {/* ── Background Glows & Elements ── */}
           <div aria-hidden="true" className="pointer-events-none absolute inset-0">
@@ -52,8 +52,8 @@ export default function CTA() {
             
             {/* Ambient Lights */}
             <div className="absolute -top-32 left-1/2 h-72 w-[42rem] -translate-x-1/2 rounded-full bg-volt-400/20 blur-[120px]" />
-            <div className="absolute -bottom-40 -left-24 h-96 w-96 rounded-full bg-lime-500/20 blur-[130px]" />
-            <div className="absolute -right-32 top-1/3 h-80 w-80 rounded-full bg-emerald-400/10 blur-[120px]" />
+            <div className="absolute -bottom-40 -left-24 h-96 w-96 rounded-full bg-brand-500/20 blur-[130px]" />
+            <div className="absolute -right-32 top-1/3 h-80 w-80 rounded-full bg-brand-300/10 blur-[120px]" />
 
             {/* Floating Blur Orbs */}
             <motion.div
@@ -68,7 +68,7 @@ export default function CTA() {
             />
 
             {/* Bottom Gradient Overlay */}
-            <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#05070f] via-[#05070f]/50 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#10346c] via-[#10346c]/50 to-transparent" />
           </div>
 
           {/* Top Hairline Highlight */}
@@ -93,10 +93,10 @@ export default function CTA() {
                 transition={{ delay: 0.1, duration: 0.4 }}
                 className="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/[0.06] py-1.5 pl-2 pr-4 backdrop-blur-xl"
               >
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-volt-300 px-2.5 py-1 text-[11px] font-black text-[#05070f]">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-volt-300 px-2.5 py-1 text-[11px] font-black text-[#10346c]">
                   <span className="relative flex h-1.5 w-1.5">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#05070f] opacity-75" />
-                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#05070f]" />
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#10346c] opacity-75" />
+                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#10346c]" />
                   </span>
                   New
                 </span>
@@ -124,7 +124,7 @@ export default function CTA() {
                   {CLIENT_AVATARS.map((avatar) => (
                     <span
                       key={avatar}
-                      className="grid h-9 w-9 place-items-center rounded-full border-2 border-[#05070f] bg-gradient-to-br from-white/20 to-white/5 text-[10px] font-extrabold text-volt-300 backdrop-blur"
+                      className="grid h-9 w-9 place-items-center rounded-full border-2 border-[#10346c] bg-gradient-to-br from-white/20 to-white/5 text-[10px] font-extrabold text-volt-300 backdrop-blur"
                     >
                       {avatar}
                     </span>
@@ -132,7 +132,7 @@ export default function CTA() {
                 </div>
                 <div className="flex items-center gap-1">
                   {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
+                    <Star key={i} className="h-4 w-4 fill-gold-500 text-gold-500" />
                   ))}
                   <span className="ml-1.5 text-sm font-bold text-white">4.9</span>
                   <span className="text-sm text-white/50">· 500+ clients</span>
@@ -143,7 +143,7 @@ export default function CTA() {
               <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
                 <Link
                   href="/contact"
-                  className="group/btn inline-flex w-full items-center justify-center gap-2 rounded-full bg-volt-300 px-7 py-4 text-sm font-black text-[#05070f] shadow-[0_18px_50px_-12px_rgba(228,255,106,0.4)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:shadow-2xl sm:w-auto"
+                  className="group/btn inline-flex w-full items-center justify-center gap-2 rounded-full bg-volt-300 px-7 py-4 text-sm font-black text-[#10346c] shadow-[0_18px_50px_-12px_rgba(121,180,237,0.4)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:shadow-2xl sm:w-auto"
                 >
                   <CalendarCheck className="h-4 w-4" />
                   Book free consultation
@@ -190,13 +190,13 @@ export default function CTA() {
                 {/* Card Header */}
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <span className="grid h-11 w-11 place-items-center rounded-2xl bg-volt-300 text-[#05070f]">
+                    <span className="grid h-11 w-11 place-items-center rounded-2xl bg-volt-300 text-[#10346c]">
                       <CalendarCheck className="h-5 w-5" />
                     </span>
                     <div>
                       <p className="text-[15px] font-extrabold text-white">Pick a time</p>
                       <p className="flex items-center gap-1.5 text-xs text-white/55">
-                        <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
+                        <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-brand-300" />
                         Senior team · replies in 24h
                       </p>
                     </div>
@@ -243,7 +243,7 @@ export default function CTA() {
                         aria-pressed={isSelected}
                         className={`flex items-center justify-center gap-1.5 rounded-xl border px-3 py-2.5 text-[13px] font-semibold transition-all duration-200 ${
                           isSelected
-                            ? "border-white bg-white font-bold text-[#05070f] shadow-lg"
+                            ? "border-white bg-white font-bold text-[#10346c] shadow-lg"
                             : "border-white/10 bg-transparent text-white/80 hover:border-volt-300/50 hover:text-white"
                         }`}
                       >
@@ -260,7 +260,7 @@ export default function CTA() {
                     pathname: "/contact",
                     query: { date: selectedDate, time: selectedTime },
                   }}
-                  className="group mt-5 flex w-full items-center justify-center gap-2 rounded-2xl bg-white px-5 py-3.5 text-sm font-black text-[#05070f] transition-all hover:bg-volt-300 active:scale-[0.98]"
+                  className="group mt-5 flex w-full items-center justify-center gap-2 rounded-2xl bg-white px-5 py-3.5 text-sm font-black text-[#10346c] transition-all hover:bg-volt-300 active:scale-[0.98]"
                 >
                   Confirm my free call
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -281,9 +281,9 @@ export default function CTA() {
               <motion.div
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -left-4 -top-5 hidden items-center gap-2.5 rounded-2xl border border-white/10 bg-[#0a0f22]/90 px-4 py-2.5 shadow-xl backdrop-blur-xl sm:flex"
+                className="absolute -left-4 -top-5 hidden items-center gap-2.5 rounded-2xl border border-white/10 bg-[#0b254d]/90 px-4 py-2.5 shadow-xl backdrop-blur-xl sm:flex"
               >
-                <span className="grid h-8 w-8 place-items-center rounded-xl bg-volt-300 text-[#05070f]">
+                <span className="grid h-8 w-8 place-items-center rounded-xl bg-volt-300 text-[#10346c]">
                   <Zap className="h-4 w-4" />
                 </span>
                 <div>
@@ -295,9 +295,9 @@ export default function CTA() {
               <motion.div
                 animate={{ y: [0, 8, 0] }}
                 transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-5 -right-3 hidden items-center gap-2.5 rounded-2xl border border-white/10 bg-[#0a0f22]/90 px-4 py-2.5 shadow-xl backdrop-blur-xl sm:flex"
+                className="absolute -bottom-5 -right-3 hidden items-center gap-2.5 rounded-2xl border border-white/10 bg-[#0b254d]/90 px-4 py-2.5 shadow-xl backdrop-blur-xl sm:flex"
               >
-                <span className="grid h-8 w-8 place-items-center rounded-xl bg-emerald-400/20 text-emerald-300">
+                <span className="grid h-8 w-8 place-items-center rounded-xl bg-brand-300/20 text-brand-300">
                   <ShieldCheck className="h-4 w-4" />
                 </span>
                 <div>

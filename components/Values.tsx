@@ -51,16 +51,16 @@ export default function Values() {
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
               whileHover={{ y: -8 }}
-              className="group rounded-3xl border border-slate-900/10 bg-white p-6 shadow-[0_14px_36px_-24px_rgb(5_7_15/0.3)] transition-shadow hover:shadow-[0_26px_50px_-22px_rgb(5_7_15/0.35)]"
+              className="group rounded-3xl border border-slate-900/10 bg-white p-6 shadow-[0_14px_36px_-24px_rgb(16_52_108/0.3)] transition-shadow hover:shadow-[0_26px_50px_-22px_rgb(16_52_108/0.35)]"
             >
               <div className="flex items-center justify-between">
-                <div className="grid h-11 w-11 place-items-center rounded-2xl bg-[#05070f] text-volt-300 shadow-lg transition-transform duration-300 group-hover:scale-110">
+                <div className="grid h-11 w-11 place-items-center rounded-2xl bg-[#10346c] text-volt-300 shadow-lg transition-transform duration-300 group-hover:scale-110">
                   <c.icon className="h-5 w-5" aria-hidden="true" />
                 </div>
-                <ArrowUpRight className="h-4 w-4 text-slate-300 transition group-hover:text-lime-700" />
+                <ArrowUpRight className="h-4 w-4 text-slate-300 transition group-hover:text-brand-700" />
               </div>
-              <p className="font-display mt-4 font-mono text-[13px] font-bold tracking-wide text-lime-700 uppercase">{c.stat}</p>
-              <h3 className="font-display mt-1 text-[17px] font-bold text-[#05070f]">{c.title}</h3>
+              <p className="font-display mt-4 font-mono text-[13px] font-bold tracking-wide text-brand-700 uppercase">{c.stat}</p>
+              <h3 className="font-display mt-1 text-[17px] font-bold text-[#10346c]">{c.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-slate-600">{c.text}</p>
             </motion.article>
           ))}

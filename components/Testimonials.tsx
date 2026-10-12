@@ -41,25 +41,25 @@ export default function Testimonials() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -60 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
-                className="mx-auto max-w-3xl rounded-[1.75rem] border border-slate-900/10 bg-white p-8 text-center shadow-[0_24px_60px_-30px_rgb(5_7_15/0.35)] sm:p-10"
+                className="mx-auto max-w-3xl rounded-[1.75rem] border border-slate-900/10 bg-white p-8 text-center shadow-[0_24px_60px_-30px_rgb(16_52_108/0.35)] sm:p-10"
               >
-                <span className="mx-auto grid h-12 w-12 place-items-center rounded-2xl bg-[#05070f]">
+                <span className="mx-auto grid h-12 w-12 place-items-center rounded-2xl bg-[#10346c]">
                   <Quote className="h-5 w-5 text-volt-300" aria-hidden="true" />
                 </span>
                 <div className="mt-4 flex justify-center gap-1" aria-label="5 star rating">
                   {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" aria-hidden="true" />
+                    <Star key={i} className="h-4 w-4 fill-gold-500 text-gold-500" aria-hidden="true" />
                   ))}
                 </div>
-                <blockquote className="font-accent mt-4 text-xl leading-relaxed text-[#05070f] sm:text-2xl">
+                <blockquote className="font-accent mt-4 text-xl leading-relaxed text-[#10346c] sm:text-2xl">
                   “{current.quote}”
                 </blockquote>
                 <figcaption className="mt-6 flex items-center justify-center gap-3">
-                  <span className="grid h-11 w-11 place-items-center rounded-full bg-[#05070f] text-sm font-black text-volt-300">
+                  <span className="grid h-11 w-11 place-items-center rounded-full bg-[#10346c] text-sm font-black text-volt-300">
                     {current.initials}
                   </span>
                   <span className="text-left">
-                    <span className="block text-[15px] font-extrabold text-[#05070f]">{current.name}</span>
+                    <span className="block text-[15px] font-extrabold text-[#10346c]">{current.name}</span>
                     <span className="block text-sm text-slate-500">{current.role}</span>
                   </span>
                 </figcaption>

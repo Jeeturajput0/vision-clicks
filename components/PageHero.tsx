@@ -34,7 +34,7 @@ export default function PageHero({  title, highlight, description, crumb, trail 
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mt-5 max-w-3xl"
           >
-            <h1 className="font-display mt-5 text-4xl font-bold tracking-tight text-balance text-[#05070f] sm:text-5xl lg:text-6xl">
+            <h1 className="font-display mt-5 text-4xl font-bold tracking-tight text-balance text-[#10346c] sm:text-5xl lg:text-6xl">
               {title} <span className="font-accent font-normal text-gradient">{highlight}</span>
             </h1>
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
@@ -44,7 +44,7 @@ export default function PageHero({  title, highlight, description, crumb, trail 
         </div>
       </section>
       {trail && (
-        <div aria-hidden="true" className="h-10 bg-gradient-to-b from-white to-[#f4f5f0]" />
+        <div aria-hidden="true" className="h-10 bg-gradient-to-b from-white to-[#F3F7FC]" />
       )}
     </>
   );

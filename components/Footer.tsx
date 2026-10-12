@@ -84,18 +84,18 @@ export default function Footer() {
         <div className="mt-12 grid gap-10 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           <div>
             <Link
-              href="/"
-              className="inline-flex items-center gap-2.5 rounded-xl bg-white px-3 py-1.5"
-              aria-label="Vision Clicks home"
-            >
-              <Image
-                src="/vision-clicks-logo.png"
-                alt="Vision Clicks"
-                width={150}
-                height={45}
-                className="h-9 w-auto object-contain"
-              />
-            </Link>
+  href="/"
+  aria-label="Vision Clicks home"
+  className="inline-flex shrink-0 items-center rounded-xl  px-3 py-1.5"
+>
+  <Image
+    src="/vision-clicks-logo.png"
+    alt="Vision Clicks"
+    width={180}
+    height={52}
+    className="h-10 w-auto object-contain sm:h-11"
+  />
+</Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/50">
               A senior product &amp; engineering studio crafting software that
               drives growth — from MVP to enterprise scale, since 2014.
@@ -191,3 +191,4 @@ export default function Footer() {
     </footer>
   );
 }
+  

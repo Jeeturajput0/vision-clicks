@@ -48,7 +48,7 @@ export default function Process() {
         />
         <div className="relative mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {/* connecting line */}
-          <div aria-hidden="true" className="absolute top-16 right-8 left-8 hidden h-px bg-gradient-to-r from-transparent via-lime-500 to-transparent lg:block" />
+          <div aria-hidden="true" className="absolute top-16 right-8 left-8 hidden h-px bg-gradient-to-r from-transparent via-brand-500 to-transparent lg:block" />
           {steps.map((s, i) => (
             <motion.div
               key={s.no}
@@ -56,17 +56,17 @@ export default function Process() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group relative rounded-3xl border border-slate-200/70 bg-white p-7 shadow-[0_14px_36px_-24px_rgb(5_7_15/0.3)] transition-all hover:-translate-y-2 hover:shadow-[0_28px_56px_-24px_rgb(79_70_229/0.4)]"
+              className="group relative rounded-3xl border border-slate-200/70 bg-white p-7 shadow-[0_14px_36px_-24px_rgb(16_52_108/0.3)] transition-all hover:-translate-y-2 hover:shadow-[0_28px_56px_-24px_rgb(79_70_229/0.4)]"
             >
               <div className="flex items-center justify-between">
-                <span className="font-display text-4xl font-bold text-slate-200 transition-colors group-hover:text-lime-500">
+                <span className="font-display text-4xl font-bold text-slate-200 transition-colors group-hover:text-brand-500">
                   {s.no}
                 </span>
-                <span className="rounded-full bg-[#05070f] px-3 py-1 font-mono text-[11px] font-bold text-volt-300">
+                <span className="rounded-full bg-[#10346c] px-3 py-1 font-mono text-[11px] font-bold text-volt-300">
                   {s.time}
                 </span>
               </div>
-              <div className="relative mt-4 grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-[#05070f] to-lime-700 text-white shadow-lg">
+              <div className="relative mt-4 grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-[#10346c] to-brand-700 text-white shadow-lg">
                 <s.icon className="h-6 w-6" aria-hidden="true" />
               </div>
               <h3 className="font-display mt-5 text-lg font-bold text-slate-900">{s.title}</h3>

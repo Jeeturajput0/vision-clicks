@@ -56,14 +56,14 @@ export default function Stats() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
-          className="grid grid-cols-2 gap-y-8 rounded-3xl border border-slate-900/10 bg-white px-6 py-8 shadow-[0_20px_50px_-28px_rgb(5_7_15/0.3)] sm:px-10 lg:grid-cols-4"
+          className="grid grid-cols-2 gap-y-8 rounded-3xl border border-slate-900/10 bg-white px-6 py-8 shadow-[0_20px_50px_-28px_rgb(16_52_108/0.3)] sm:px-10 lg:grid-cols-4"
         >
           {stats.map((s, i) => (
             <div
               key={s.label}
               className={"text-center " + (i > 0 ? "lg:border-l lg:border-slate-900/10" : "")}
             >
-              <dd className="font-display text-3xl font-bold tracking-tight text-[#05070f] sm:text-4xl">
+              <dd className="font-display text-3xl font-bold tracking-tight text-[#10346c] sm:text-4xl">
                 <Counter value={s.value} suffix={s.suffix} decimals={s.decimals ?? 0} />
               </dd>
               <dt className="mt-1.5 flex items-center justify-center gap-1.5 text-[13px] font-medium text-slate-500">
@@ -74,7 +74,7 @@ export default function Stats() {
           ))}
         </motion.dl>
       </div>
-      <div aria-hidden="true" className="h-10 bg-gradient-to-b from-white to-[#f4f5f0]" />
+      <div aria-hidden="true" className="h-10 bg-gradient-to-b from-white to-[#F3F7FC]" />
     </section>
   );
 }

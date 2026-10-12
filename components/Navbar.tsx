@@ -58,25 +58,24 @@ export default function Navbar() {
           className={cn(
             "glass mt-3 flex items-center justify-between gap-3 rounded-2xl border py-2.5 pr-2.5 pl-4 transition-all duration-300 sm:pl-5",
             scrolled
-              ? "border-slate-900/10 shadow-[0_18px_44px_-20px_rgb(5_7_15/0.3)]"
-              : "border-slate-900/10 shadow-[0_14px_36px_-22px_rgb(5_7_15/0.25)]"
+              ? "border-slate-900/10 shadow-[0_18px_44px_-20px_rgb(16_52_108/0.3)]"
+              : "border-slate-900/10 shadow-[0_14px_36px_-22px_rgb(16_52_108/0.25)]"
           )}
         >
-          <Link
-            href="/"
-            className="flex items-center gap-2.5 rounded-xl bg-white px-3 py-1.5 ring-1 ring-slate-900/10"
-            aria-label="Vision Clicks home"
-          >
-            <Image
-              src="/vision-clicks-logo.png"
-              alt="Vision Clicks"
-              width={150}
-              height={45}
-              className="h-9 w-auto object-contain"
-              priority
-            />
-          </Link>
-
+        <Link
+  href="/"
+  aria-label="Vision Clicks home"
+  className="flex shrink-0 items-center"
+>
+  <Image
+    src="/vision-clicks-logo.png"
+    alt="Vision Clicks"
+    width={180}
+    height={52}
+    className="h-10 w-auto object-contain sm:h-11"
+    priority
+  />
+</Link>
           <ul className="hidden items-center gap-1 lg:flex">
             {links.map((l) => {
               const active = isActive(l.href);
@@ -88,8 +87,8 @@ export default function Navbar() {
                     className={cn(
                       "rounded-full px-4 py-2 text-[13.5px] font-semibold transition",
                       active
-                        ? "bg-[#05070f] text-white shadow-sm"
-                        : "text-slate-600 hover:bg-slate-900/[0.06] hover:text-[#05070f]"
+                        ? "bg-[#10346c] text-white shadow-sm"
+                        : "text-slate-600 hover:bg-slate-900/[0.06] hover:text-[#10346c]"
                     )}
                   >
                     {l.label}
@@ -102,13 +101,13 @@ export default function Navbar() {
           <div className="hidden items-center gap-2 lg:flex">
             <Link
               href="/services"
-              className="rounded-full px-4 py-2.5 text-[13.5px] font-semibold text-slate-600 transition hover:text-[#05070f]"
+              className="rounded-full px-4 py-2.5 text-[13.5px] font-semibold text-slate-600 transition hover:text-[#10346c]"
             >
               Our work
             </Link>
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-1.5 rounded-xl bg-[#05070f] px-5 py-2.5 text-[13.5px] font-bold text-white shadow-[0_12px_28px_-12px_rgb(5_7_15/0.5)] transition hover:bg-volt-400 hover:text-[#05070f]"
+              className="group inline-flex items-center gap-1.5 rounded-xl bg-[#10346c] px-5 py-2.5 text-[13.5px] font-bold text-white shadow-[0_12px_28px_-12px_rgb(16_52_108/0.5)] transition hover:bg-volt-400 hover:text-[#10346c]"
             >
               Start a project
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -155,7 +154,7 @@ export default function Navbar() {
                         className={cn(
                           "flex items-center justify-between rounded-xl px-4 py-3 text-[15px] font-semibold transition",
                           active
-                            ? "bg-[#05070f] text-white"
+                            ? "bg-[#10346c] text-white"
                             : "text-slate-700 hover:bg-slate-900/[0.05]"
                         )}
                       >
@@ -169,7 +168,7 @@ export default function Navbar() {
                   <Link
                     href="/contact"
                     onClick={() => setOpen(false)}
-                    className="flex items-center justify-center gap-2 rounded-xl bg-[#05070f] px-4 py-3 text-sm font-bold text-white"
+                    className="flex items-center justify-center gap-2 rounded-xl bg-[#10346c] px-4 py-3 text-sm font-bold text-white"
                   >
                     Start a project <ArrowUpRight className="h-4 w-4" />
                   </Link>

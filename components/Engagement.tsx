@@ -59,15 +59,15 @@ export default function Engagement() {
               className={cn(
                 "relative flex flex-col rounded-[1.75rem] p-8",
                 p.featured
-                  ? "noise overflow-hidden bg-[#05070f] text-white shadow-[0_32px_70px_-24px_rgb(5_7_15/0.6)]"
-                  : "border border-slate-200/70 bg-white text-slate-900 shadow-[0_14px_36px_-24px_rgb(5_7_15/0.3)]"
+                  ? "noise overflow-hidden bg-[#10346c] text-white shadow-[0_32px_70px_-24px_rgb(16_52_108/0.6)]"
+                  : "border border-slate-200/70 bg-white text-slate-900 shadow-[0_14px_36px_-24px_rgb(16_52_108/0.3)]"
               )}
             >
               {p.featured && (
                 <>
-                  <div aria-hidden="true" className="absolute -top-20 -right-20 h-56 w-56 rounded-full bg-lime-500/30 blur-[80px]" />
+                  <div aria-hidden="true" className="absolute -top-20 -right-20 h-56 w-56 rounded-full bg-brand-500/30 blur-[80px]" />
                   <div aria-hidden="true" className="absolute -bottom-20 -left-20 h-56 w-56 rounded-full bg-volt-400/15 blur-[80px]" />
-                  <span className="absolute top-5 right-5 inline-flex items-center gap-1 rounded-full bg-volt-400 px-3 py-1 text-[11px] font-black text-[#05070f]">
+                  <span className="absolute top-5 right-5 inline-flex items-center gap-1 rounded-full bg-volt-400 px-3 py-1 text-[11px] font-black text-[#10346c]">
                     <Sparkles className="h-3 w-3" /> {p.tag}
                   </span>
                 </>
@@ -89,7 +89,7 @@ export default function Engagement() {
               <ul className="mt-6 flex-1 space-y-3">
                 {p.features.map((f) => (
                   <li key={f} className={cn("flex items-center gap-2.5 text-sm font-medium", p.featured ? "text-white/80" : "text-slate-600")}>
-                    <span className={cn("grid h-5 w-5 shrink-0 place-items-center rounded-full", p.featured ? "bg-volt-400 text-[#05070f]" : "bg-lime-100 text-lime-800")}>
+                    <span className={cn("grid h-5 w-5 shrink-0 place-items-center rounded-full", p.featured ? "bg-volt-400 text-[#10346c]" : "bg-brand-100 text-brand-800")}>
                       <Check className="h-3 w-3" aria-hidden="true" />
                     </span>
                     {f}
@@ -101,8 +101,8 @@ export default function Engagement() {
                 className={cn(
                   "group mt-7 inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-sm font-bold transition",
                   p.featured
-                    ? "bg-white text-[#05070f] hover:bg-volt-300"
-                    : "bg-[#05070f] text-white hover:bg-lime-700"
+                    ? "bg-white text-[#10346c] hover:bg-volt-300"
+                    : "bg-[#10346c] text-white hover:bg-brand-700"
                 )}
               >
                 {p.cta}

@@ -23,10 +23,10 @@ const points = [
 // What We Do — modern checklist + image
 export default function WhatWeDo() {
   return (
-    <section id="solutions" className="relative scroll-mt-28 py-16 sm:py-20">
-      <div className="mx-auto max-w-7xl rounded-[2.5rem] border border-slate-200/60 bg-white px-4 py-14 sm:px-8 lg:px-12">
+    <section id="solutions" className="relative scroll-mt-28 py-2 sm:py-1">
+      <div className="mx-auto max-w-7xl rounded-[2.5rem] border border-slate-200/60 bg-white px-4 py-5 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-7xl">
-          <SectionHeading eyebrow="Capabilities" title="What" highlight="we do" />
+          <SectionHeading  title="What" highlight="we do" />
           <div className="mt-12 grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
             <motion.div
               initial={{ opacity: 0, y: 28 }}
@@ -45,12 +45,12 @@ export default function WhatWeDo() {
                     transition={{ duration: 0.45, delay: i * 0.08 }}
                     className="flex gap-4 rounded-2xl border border-slate-100 bg-[#f7f8fc] p-5"
                   >
-                    <span className="font-display grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-[#0a1330] text-sm font-bold text-white">
+                    <span className="font-display grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-[#10346c] text-sm font-bold text-white">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <span>
                       <span className="flex items-center gap-2 text-[15px] font-bold text-slate-900">
-                        <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+                        <CheckCircle2 className="h-4 w-4 text-brand-500" />
                         {p.t}
                       </span>
                       <span className="mt-1 block text-sm leading-relaxed text-slate-600">{p.d}</span>
@@ -76,13 +76,13 @@ export default function WhatWeDo() {
                   loading="lazy"
                   className="h-[320px] w-full object-cover transition-transform duration-700 group-hover:scale-105 sm:h-[460px]"
                 />
-                <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#04081a]/80 via-transparent to-transparent" />
+                <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#0b254d]/80 via-transparent to-transparent" />
                 <div className="absolute right-5 bottom-5 left-5 flex items-center justify-between rounded-2xl border border-white/20 bg-white/10 px-5 py-4 backdrop-blur-xl">
                   <div>
                     <p className="text-sm font-extrabold text-white">Web • Mobile • Enterprise • Cloud</p>
                     <p className="font-mono text-[11px] tracking-wider text-volt-300 uppercase">Sprint-based delivery</p>
                   </div>
-                  <span className="rounded-full bg-white px-3 py-1.5 text-xs font-bold text-[#0a1330]">
+                  <span className="rounded-full bg-white px-3 py-1.5 text-xs font-bold text-[#10346c]">
                     Agile
                   </span>
                 </div>
