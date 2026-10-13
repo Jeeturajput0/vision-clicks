@@ -1,3 +1,4 @@
+
 "use client";
 
 import SectionHeading from "./SectionHeading";
@@ -19,10 +20,14 @@ import {
   SiRedis,
   SiFigma,
 } from "react-icons/si";
+
 import { BrainCircuit, Cloud } from "lucide-react";
 import type { ComponentType } from "react";
 
-const techIcons: Record<string, ComponentType<{ className?: string }>> = {
+const techIcons: Record<
+  string,
+  ComponentType<{ className?: string }>
+> = {
   React: SiReact,
   "Next.js": SiNextdotjs,
   "Node.js": SiNodedotjs,
@@ -40,21 +45,39 @@ const techIcons: Record<string, ComponentType<{ className?: string }>> = {
   "AI & ML": BrainCircuit,
   Figma: SiFigma,
 };
+
 export default function Technologies() {
   return (
-    <section aria-label="Technologies we master" className="py-16 sm:py-10">
+    <section
+      aria-label="Technologies we master"
+      className="py-16 sm:py-10"
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
         <SectionHeading
           title="Built on a modern,"
           highlight="proven stack"
           description="Production-grade frameworks and clouds — chosen for speed, security and scale."
         />
 
-        {/* Seamless infinite loop: 2 identical copies, 0 -> -50%.
-            Last card connects straight back to first — no gap, no reset.
-            Auto-slides one direction forever, pauses on hover. */}
-        <div className="mt-10 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
-          <div className="animate-marquee-slow flex w-max py-2 [will-change:transform] hover:[animation-play-state:paused]">
+        {/* Seamless infinite technology slider */}
+        <div
+          className="
+            mt-10
+            overflow-hidden
+            [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]
+          "
+        >
+          <div
+            className="
+              animate-marquee-slow
+              flex
+              w-max
+              py-2
+              [will-change:transform]
+              hover:[animation-play-state:paused]
+            "
+          >
             {[0, 1].map((copy) => (
               <div
                 key={copy}
@@ -66,44 +89,54 @@ export default function Technologies() {
 
                   return (
                     <div
-                      key={copy === 0 ? technology.name : `${technology.name}-dup`}
+                      key={
+                        copy === 0
+                          ? technology.name
+                          : `${technology.name}-dup`
+                      }
                       className="
-                  group
-                  flex
-                  w-[240px]
-                  shrink-0
-                  items-center
-                  gap-4
-                  rounded-2xl
-                  border
-                  border-[#10346C]/10
-                  bg-white
-                  p-4
-                  shadow-[0_10px_28px_-22px_rgb(16_52_108/0.3)]
-                  transition-all
-                  duration-300
-                  hover:-translate-y-1.5
-                  hover:border-[#2374B9]/40
-                  hover:shadow-[0_20px_36px_-20px_rgb(35_116_185/0.35)]
-                  sm:w-[260px]
-                  lg:w-[280px]
-                "
+                        group
+                        flex
+                        w-[240px]
+                        shrink-0
+                        items-center
+                        gap-4
+                        rounded-2xl
+                        border
+                        border-[#2374B9]/15
+                        bg-gradient-to-br
+                        from-white
+                        via-white
+                        to-[#EAF4FF]
+                        p-4
+                        shadow-[0_10px_30px_-18px_rgb(16_52_108/0.35)]
+                        transition-all
+                        duration-300
+                        hover:-translate-y-1.5
+                        hover:border-[#2374B9]/40
+                        hover:from-white
+                        hover:via-[#F8FBFF]
+                        hover:to-[#DCEEFF]
+                        hover:shadow-[0_20px_40px_-18px_rgb(35_116_185/0.35)]
+                        sm:w-[260px]
+                        lg:w-[280px]
+                      "
                     >
                       {/* Technology Icon */}
                       <span
                         className={`
-                    grid
-                    h-12
-                    w-12
-                    shrink-0
-                    place-items-center
-                    rounded-xl
-                    ${technology.color}
-                    shadow-sm
-                    transition-transform
-                    duration-300
-                    group-hover:scale-110
-                  `}
+                          grid
+                          h-12
+                          w-12
+                          shrink-0
+                          place-items-center
+                          rounded-xl
+                          ${technology.color}
+                          shadow-sm
+                          transition-transform
+                          duration-300
+                          group-hover:scale-110
+                        `}
                       >
                         {Icon ? (
                           <Icon className="text-xl" />

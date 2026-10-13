@@ -23,7 +23,7 @@ export default function Home() {
       <TrustedTeams logos={logos} />
       {/* <Work /> */}
       <About />
-      <Services />
+      <Services limit={5} showViewAll />
       <Process />
       <WhyChoose />
       {/* <Engagement /> */}

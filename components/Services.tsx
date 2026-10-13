@@ -5,7 +5,7 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight, Check, Clock, Minus, Plus } from "lucide-react";
 import SectionHeading from "./SectionHeading";
-import { services, type Service } from "@/data/services";
+import { services, allServices, type Service } from "@/data/services";
 import { cn } from "@/lib/utils";
 
 // Click-to-expand service card — click anywhere on the card to reveal full details
@@ -28,7 +28,7 @@ function ServiceCard({
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.5, delay: (index % 3) * 0.08 }}
       className={cn(
-        "group relative flex flex-col overflow-hidden rounded-3xl border bg-white transition-all duration-300",
+        "group relative flex h-full flex-col overflow-hidden rounded-3xl border bg-gradient-to-br from-white to-brand-100 transition-all duration-300",
         open
           ? "border-[#10346c] shadow-[0_28px_56px_-24px_rgb(16_52_108/0.45)]"
           : "border-slate-200/70 shadow-[0_14px_36px_-24px_rgb(16_52_108/0.3)] hover:-translate-y-1.5 hover:shadow-[0_28px_56px_-24px_rgb(79_70_229/0.4)]"
@@ -137,7 +137,7 @@ function ServiceCard({
         )}
       </AnimatePresence>
 
-      <div className="p-7 pt-5" aria-hidden="true" />
+      <div className="mt-auto p-7 pt-5" aria-hidden="true" />
       {/* bottom accent line */}
       <div
         aria-hidden="true"
@@ -150,8 +150,20 @@ function ServiceCard({
   );
 }
 
-export default function Services() {
+export default function Services({
+  limit,
+  showViewAll = false,
+  showAll = false,
+}: {
+  limit?: number;
+  showViewAll?: boolean;
+  showAll?: boolean;
+}) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const baseItems = showAll ? allServices : services;
+  const visibleServices =
+    typeof limit === "number" ? baseItems.slice(0, limit) : baseItems;
 
   return (
     <section id="services" className="scroll-mt-8 py-5 sm:py-10">
@@ -162,8 +174,8 @@ export default function Services() {
           highlight="what's inside"
           description="Five core services, one senior team. Tap any card to see deliverables, timelines and what's included."
         />
-        <div className="mt-12 grid items-start gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((s, i) => (
+        <div className="mt-12 grid items-stretch gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {visibleServices.map((s, i) => (
             <ServiceCard
               key={s.title}
               service={s}
@@ -172,38 +184,52 @@ export default function Services() {
               onToggle={() => setOpenIndex(openIndex === i ? null : i)}
             />
           ))}
-          {/* CTA tile to complete the 3-col grid */}
-          <motion.div
-            initial={{ opacity: 0, y: 28 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="noise relative flex flex-col justify-between overflow-hidden rounded-3xl bg-[#10346c] p-7 text-white"
-          >
-            <div aria-hidden="true" className="absolute inset-0">
-              <div className="bg-dots-light absolute inset-0 opacity-40" />
-              <div className="absolute -top-16 -right-16 h-56 w-56 rounded-full bg-brand-500/25 blur-[80px]" />
-              <div className="absolute -right-8 -bottom-16 h-56 w-56 rounded-full bg-volt-400/15 blur-[80px]" />
-            </div>
-            <div className="relative">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/10 px-3 py-1 font-mono text-[11px] font-bold tracking-[0.16em] text-volt-300 uppercase">
-                Custom build
-              </span>
-              <h3 className="font-display mt-4 text-xl font-bold">
-                Need something <span className="font-accent font-normal text-volt-300">custom?</span>
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-white/60">
-                Tell us about your idea. We will scope, design and deliver a solution tailored to your business in weeks, not months.
-              </p>
-            </div>
-            <Link
-              href="/contact"
-              className="relative mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-bold text-[#10346c] transition hover:bg-volt-300"
+          {/* CTA card */}
+          <div className="h-full">
+            <motion.div
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="noise relative flex h-full min-h-full flex-col justify-between overflow-hidden rounded-3xl bg-[#10346c] p-7 text-white"
             >
-              Get free consultation <ArrowUpRight className="h-4 w-4" />
-            </Link>
-          </motion.div>
+              <div aria-hidden="true" className="absolute inset-0">
+                <div className="bg-dots-light absolute inset-0 opacity-40" />
+                <div className="absolute -top-16 -right-16 h-56 w-56 rounded-full bg-brand-500/25 blur-[80px]" />
+                <div className="absolute -right-8 -bottom-16 h-56 w-56 rounded-full bg-volt-400/15 blur-[80px]" />
+              </div>
+              <div className="relative">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/10 px-3 py-1 font-mono text-[11px] font-bold tracking-[0.16em] text-volt-300 uppercase">
+                  Custom build
+                </span>
+                <h3 className="font-display mt-4 text-xl font-bold">
+                  Need something <span className="font-accent font-normal text-volt-300">custom?</span>
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-white/60">
+                  Tell us about your idea. We will scope, design and deliver a solution tailored to your business in weeks, not months.
+                </p>
+              </div>
+              <Link
+                href="/contact"
+                className="relative mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-bold text-[#10346c] transition hover:bg-volt-300"
+              >
+                Get free consultation <ArrowUpRight className="h-4 w-4" />
+              </Link>
+            </motion.div>
+          </div>
         </div>
+
+        {showViewAll && (
+          <div className="mt-10 flex justify-center">
+            <Link
+              href="/services"
+              className="group inline-flex items-center gap-2 rounded-2xl bg-[#10346c] px-7 py-3.5 text-sm font-bold text-white shadow-[0_18px_40px_-18px_rgb(16_52_108/0.6)] transition hover:bg-brand-700"
+            >
+              View all {allServices.length} services
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

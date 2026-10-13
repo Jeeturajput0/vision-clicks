@@ -7,7 +7,7 @@ import CTA from "@/components/CTA";
 export const metadata: Metadata = {
   title: "Services | Vision Clicks",
   description:
-    "Web development, mobile app development, custom software, UI/UX design and digital solutions — five core services, one senior team.",
+    "Web development, mobile apps, custom software, UI/UX, e-commerce, cloud, AI automation, digital marketing and more — nine services, one senior team.",
 };
 
 export default function ServicesPage() {
@@ -20,7 +20,7 @@ export default function ServicesPage() {
         description="Design, engineering, cloud and growth — one senior team covering your full product journey."
         crumb="Services"
       />
-      <Services />
+      <Services showAll />
       <Technologies />
       <CTA />
     </>

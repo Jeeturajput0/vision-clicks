@@ -4,6 +4,10 @@ import {
   Code2,
   PenTool,
   Sparkles,
+  ShoppingCart,
+  Cloud,
+  Bot,
+  Megaphone,
   type LucideIcon,
 } from "lucide-react";
 
@@ -130,3 +134,99 @@ export const services: Service[] = [
     timeline: "Flexible",
   },
 ];
+
+// Extra services — ONLY shown on the /services page.
+// Home page keeps using `services` (first 5), so it stays unchanged.
+export const additionalServices: Service[] = [
+  {
+    icon: ShoppingCart,
+    title: "E-commerce Development",
+    tagline: "Online stores",
+    description:
+      "Complete online stores with payments, inventory and order management built to sell.",
+    details:
+      "End-to-end storefronts with payment gateways, inventory, order processing, customer accounts and analytics dashboards — optimised for speed, SEO and conversions from day one.",
+    features: [
+      "Online Storefront",
+      "Payment Gateways",
+      "Order Management",
+      "Analytics Dashboard",
+    ],
+    deliverables: [
+      "High-converting storefront",
+      "Payments + shipping setup",
+      "Inventory & order flow",
+      "Sales analytics dashboard",
+    ],
+    timeline: "4–8 weeks",
+  },
+  {
+    icon: Cloud,
+    title: "Cloud & DevOps",
+    tagline: "Scale in the cloud",
+    description:
+      "Cloud setup, migration and DevOps pipelines for fast, secure, scalable releases.",
+    details:
+      "Cloud migration, infrastructure setup, CI/CD pipelines, security hardening and backup & recovery — engineered on AWS with monitoring and cost optimisation built in.",
+    features: [
+      "Cloud Migration",
+      "CI/CD Pipelines",
+      "Security Hardening",
+      "Backup & Recovery",
+    ],
+    deliverables: [
+      "Cloud infrastructure setup",
+      "Automated deployments",
+      "Monitoring & alerts",
+      "Cost optimisation",
+    ],
+    timeline: "3–6 weeks",
+  },
+  {
+    icon: Bot,
+    title: "AI Solutions & Automation",
+    tagline: "Automate with AI",
+    description:
+      "AI chatbots, workflow automation and smart integrations that save hours daily.",
+    details:
+      "From AI chatbots trained on your business data to CRM automation, document processing and custom AI integrations — practical AI that cuts manual work and improves customer experience.",
+    features: [
+      "AI Chatbots",
+      "Workflow Automation",
+      "CRM Integrations",
+      "Custom AI Features",
+    ],
+    deliverables: [
+      "AI chatbot trained on your data",
+      "Automated lead & support flows",
+      "Tool & API integrations",
+      "Team training + docs",
+    ],
+    timeline: "3–8 weeks",
+  },
+  {
+    icon: Megaphone,
+    title: "Digital Marketing & SEO",
+    tagline: "Grow online",
+    description:
+      "SEO, social media and ad campaigns that bring steady traffic and leads.",
+    details:
+      "Technical SEO, content strategy, social media management and PPC campaigns — tracked end-to-end with analytics so every rupee of spend ties back to visibility, leads and ROI.",
+    features: [
+      "SEO Optimisation",
+      "Social Media",
+      "PPC Campaigns",
+      "Content Strategy",
+    ],
+    deliverables: [
+      "SEO audit + fixes",
+      "Content calendar",
+      "Ad campaign setup",
+      "Monthly growth report",
+    ],
+    timeline: "Monthly",
+  },
+];
+
+// Full list for the /services page (home 5 + extra 4).
+export const allServices: Service[] = [...services, ...additionalServices];
