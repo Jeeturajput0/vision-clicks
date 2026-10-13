@@ -8,25 +8,25 @@ const values = [
   {
     icon: Flame,
     title: "Passion",
-    text: "Energy and creativity in every sprint — we care about outcomes, not just output.",
+    text: "We're passionate about technology and its potential to transform businesses and improve lives.",
     stat: "Outcome first",
   },
   {
     icon: Lightbulb,
     title: "Innovation",
-    text: "New tools, better patterns. We bring modern stacks that cut cost and ship faster.",
+    text: "We constantly explore new technologies and methodologies to deliver cutting-edge solutions.",
     stat: "Modern stack",
   },
   {
     icon: BadgeCheck,
     title: "Quality",
-    text: "Reviews, tests, CI/CD and docs by default. Highest bar from code to support.",
+    text: "We maintain the highest standards in everything we do, from code quality to customer service.",
     stat: "Zero compromise",
   },
   {
     icon: Users,
     title: "Collaboration",
-    text: "Weekly demos and shared roadmaps — you always know what's next.",
+    text: "We believe in the power of teamwork and work closely with our clients as partners.",
     stat: "Full transparency",
   },
 ];
@@ -34,13 +34,13 @@ const values = [
 // Values — same clean paper theme as WhyChoose (ink icons + volt accents)
 export default function Values() {
   return (
-    <section aria-label="Our core values" className="relative scroll-mt-28 py-16 sm:py-10">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section aria-label="Our core values" className="relative scroll-mt-28 py-8 sm:py-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-4 lg:px-8">
         <SectionHeading
           // eyebrow="Our values"
-          title="Driven by"
-          highlight="values"
-          description="The principles that shape how we build, collaborate, and deliver."
+          title="Our"
+          highlight="Values"
+          description="The principles that guide everything we do and shape our company culture."
         />
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {values.map((c, i) => (

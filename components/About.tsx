@@ -11,9 +11,9 @@ export default function About() {
     <section id="about" className="relative scroll-mt-28  sm:py-10 lg:py-2">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          title="A product team, not just"
-          highlight="a vendor"
-          description="Since 2014, we've helped startups and enterprises design, build and scale reliable software — from discovery and UX to cloud-native delivery and long-term support."
+          title="Our"
+          highlight="Story"
+          description="From a small passionate team in 2014 to a worldwide technology partner — here's how we got here."
         />
 
         <div className="mt-12 grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
@@ -33,12 +33,20 @@ export default function About() {
               </span>
             </div>
             <h3 className="font-display mt-5 text-2xl font-bold text-slate-900">
-              Senior engineers, sharp UX, delivery you can plan around.
+              Founded in 2014, with a vision to democratize technology.
             </h3>
             <p className="mt-4 leading-relaxed text-slate-600">
-              We work as an extension of your team — weekly demos, transparent
-              pricing and code you own from day one. No black boxes, no
-              handover headaches.
+              The Vision Clicks began as a small team of passionate developers
+              with a vision to democratize technology for businesses of all
+              sizes. What started as a local software development company has
+              grown into a comprehensive technology solutions provider serving
+              clients worldwide.
+            </p>
+            <p className="mt-3 leading-relaxed text-slate-600">
+              Our journey has been marked by continuous learning, innovation,
+              and an unwavering commitment to delivering exceptional value to
+              our clients. We&apos;ve helped hundreds of businesses transform
+              their operations through cutting-edge software solutions.
             </p>
             <ul className="mt-6 grid gap-3 sm:grid-cols-1">
               {[
@@ -88,7 +96,7 @@ export default function About() {
                     50+
                   </span>
                   <div>
-                    <p className="text-sm font-extrabold text-white">Experts in-house</p>
+                    <p className="text-sm font-extrabold text-white">Our workspace and team</p>
                     <p className="flex items-center gap-1 text-xs text-white/60">
                       <MapPin className="h-3 w-3" /> Agra • Remote worldwide
                     </p>

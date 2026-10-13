@@ -31,7 +31,15 @@ export default function Hero() {
         <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
           {/* Left */}
           <div>
-           
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55 }}
+              className="inline-flex items-center gap-2 rounded-full border border-slate-900/10 bg-white px-4 py-1.5 font-mono text-[11px] font-bold tracking-[0.18em] text-brand-700 uppercase shadow-sm"
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-volt-500" />
+              Professional Software Development
+            </motion.p>
 
             <motion.h1
               initial={{ opacity: 0, y: 28 }}
@@ -39,8 +47,8 @@ export default function Hero() {
               transition={{ duration: 0.65, delay: 0.1 }}
               className="font-display mt-6 text-[2.75rem] leading-[0.98] font-bold tracking-[-0.03em] text-balance text-[#10346c] sm:text-6xl lg:text-[4.6rem]"
             >
-              We build software that ships fast &amp; scales{" "}
-              <span className="font-accent font-normal text-gradient">beautifully.</span>
+              Build Powerful{" "}
+              <span className="font-accent font-normal text-gradient">Software Solutions That Scale</span>
             </motion.h1>
 
             <motion.p
@@ -49,9 +57,10 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="mt-6 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg"
             >
-              Vision Clicks is a senior product &amp; engineering studio crafting
-              enterprise apps, web platforms and mobile products — from first
-              sketch to production scale.
+              We specialize in custom software development, enterprise
+              applications, and digital transformation. From web and mobile
+              applications to cloud solutions, we build technology that
+              transforms how businesses operate and compete in the digital age.
             </motion.p>
 
             <motion.div

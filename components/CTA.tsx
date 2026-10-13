@@ -32,7 +32,23 @@ const DATES = [
 
 const TIME_SLOTS = ["10:30 AM", "02:00 PM", "04:30 PM", "06:00 PM"];
 
-export default function CTA() {
+export default function CTA({
+  headingTop = "Ready to Work With Us?",
+  headingHighlight = "",
+  headingPrefix = "",
+  description = "Join hundreds of satisfied clients who have transformed their businesses with our solutions.",
+  primaryLabel = "Start Your Project",
+  secondaryLabel = "View Our Work",
+  secondaryHref = "/services",
+}: {
+  headingTop?: string;
+  headingHighlight?: string;
+  headingPrefix?: string;
+  description?: string;
+  primaryLabel?: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
+}) {
   const [selectedDate, setSelectedDate] = useState("tomorrow");
   const [selectedTime, setSelectedTime] = useState("02:00 PM");
 
@@ -106,16 +122,20 @@ export default function CTA() {
               </motion.div>
 
               <h2 className="font-display mx-auto mt-6 max-w-2xl text-4xl font-bold leading-[1.05] tracking-[-0.02em] text-white sm:text-5xl lg:mx-0 lg:text-[3.6rem]">
-                Have an idea?
-                <br />
-                Let&apos;s build{" "}
-                <span className="font-accent text-gradient-light font-normal">
-                  something people love.
-                </span>
+                {headingTop}
+                {(headingPrefix || headingHighlight) && (
+                  <>
+                    <br />
+                    {headingPrefix}{" "}
+                    <span className="font-accent text-gradient-light font-normal">
+                      {headingHighlight}
+                    </span>
+                  </>
+                )}
               </h2>
 
               <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-white/60 sm:text-lg lg:mx-0">
-                Get a clear roadmap, fixed quote, and realistic timeline — senior team only, no pressure, no spam.
+                {description}
               </p>
 
               {/* Social Proof */}
@@ -146,15 +166,15 @@ export default function CTA() {
                   className="group/btn inline-flex w-full items-center justify-center gap-2 rounded-full bg-volt-300 px-7 py-4 text-sm font-black text-[#10346c] shadow-[0_18px_50px_-12px_rgba(121,180,237,0.4)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:shadow-2xl sm:w-auto"
                 >
                   <CalendarCheck className="h-4 w-4" />
-                  Book free consultation
+                  {primaryLabel}
                   <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
                 </Link>
                 <Link
-                  href="/services"
+                  href={secondaryHref}
                   className="group/btn inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-7 py-4 text-sm font-bold text-white backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/10 sm:w-auto"
                 >
                   <MessageCircle className="h-4 w-4 text-volt-300" />
-                  Explore services
+                  {secondaryLabel}
                   <ArrowUpRight className="h-4 w-4 opacity-60 transition-all duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 group-hover/btn:opacity-100" />
                 </Link>
               </div>

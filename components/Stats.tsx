@@ -4,10 +4,10 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 
 const stats = [
-  { value: 250, suffix: "+", label: "Projects delivered" },
-  { value: 500, suffix: "+", label: "Happy clients" },
-  { value: 99.9, suffix: "%", label: "Client satisfaction", decimals: 1 },
-  { value: 50, suffix: "+", label: "Engineers & designers" },
+  { value: 500, suffix: "+", label: "Projects Completed" },
+  { value: 98, suffix: "%", label: "Client Satisfaction" },
+  { value: 50, suffix: "+", label: "Team Members" },
+  { value: 10, suffix: "+", label: "Years Experience" },
 ];
 
 function Counter({
@@ -64,7 +64,7 @@ export default function Stats() {
               className={"text-center " + (i > 0 ? "lg:border-l lg:border-slate-900/10" : "")}
             >
               <dd className="font-display text-3xl font-bold tracking-tight text-[#10346c] sm:text-4xl">
-                <Counter value={s.value} suffix={s.suffix} decimals={s.decimals ?? 0} />
+                <Counter value={s.value} suffix={s.suffix} decimals={("decimals" in s ? (s as { decimals?: number }).decimals : 0) ?? 0} />
               </dd>
               <dt className="mt-1.5 flex items-center justify-center gap-1.5 text-[13px] font-medium text-slate-500">
                 <span className="h-1 w-1 rounded-full bg-volt-500" />
